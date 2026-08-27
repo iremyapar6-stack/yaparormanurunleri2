@@ -6,7 +6,7 @@ export const categories = [
   { id: "mdf", name: "MDF", subName: "MDF Levha & Melamin", icon: "Box" },
   { id: "lambri", name: "Lambri", subName: "Duvar & Tavan Lambirileri", icon: "Layers" },
   { id: "arkalik", name: "Arkalık", subName: "MDF Arkalık Levhaları", icon: "LayoutGrid" },
-  { id: "panel", name: "Paneller", subName: "Dekoratif Ahşap & Duvar Panelleri", icon: "LayoutGrid" },
+  { id: "panel", name: "Panel", subName: "Dekoratif Ahşap & Duvar Panelleri", icon: "LayoutGrid" },
 ];
 
 export const products = [
@@ -79,7 +79,7 @@ export const products = [
       en: "600 mm",
       renk: "Doğal Meşe Ahşap",
       renkKodu: "YPR-AKU201",
-      kalinlik: "15 mm",
+      kalinlik: "20 mm",
       yuzey: "Mat Vernikli Ahşap Kaplama",
       govde: "Akustik MDF Lamel Profil"
     },
@@ -88,7 +88,7 @@ export const products = [
       "En (Genişlik)": "600 mm",
       "Renk": "Doğal Meşe",
       "Renk Kodu": "YPR-AKU201",
-      "Toplam Kalınlık": "15 mm"
+      "Toplam Kalınlık": "20 mm"
     },
     pdfUrl: "/pdfs/akustik-katalog.pdf",
     featured: true
@@ -263,17 +263,17 @@ export const products = [
   },
 
   // ==========================================
-  // 7. PANELLER
+  // 7. PANEL
   // ==========================================
   {
     id: "pnl-01",
     productCode: "YPR-PANEL",
     title: "Panel",
     category: "panel",
-    categoryName: "Panel",
+    categoryName: "Paneller",
     slug: "dekoratif-ahsap-duvar-panelleri",
     images: [
-      "/panel-levha.png"
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"
     ],
     shortDescription: "İç mekan mimarisinde estetik ve lüks görünüm sağlayan dekoratif ahşap duvar ve mobilya panelleri.",
     fullDescription: "Çeşitli yüzey dokularına ve renklere sahip, kolay monte edilebilir mimari ahşap panel çözümleri.",
