@@ -72,7 +72,7 @@ export default function CorporatePage() {
               </div>
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.025rem', lineHeight: '1.8', marginBottom: '1.25rem' }}>
-              Vizyonumuz; Marmara Bölgesi'ndeki köklü liderliğimizi ulusal ve uluslararası platformlara taşıyarak iç mimari ahşap yüzeyler, ses emici akustik çözümler ve PVC vakum membran grubunda ilk tercih edilen marka olmaktır.
+              Vizyonumuz; Marmara Bölgesi'ndeki köklü liderliğimizi ulusal ve uluslararası platformlara taşıyarak iç mimari ahşap yüzeyler, ses emici akustik çözümler ve membran grubunda ilk tercih edilen marka olmaktır.
             </p>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.025rem', lineHeight: '1.8' }}>
               Gelişen teknolojileri, çağdaş mimari akımları ve yeni nesil kaplama sistemlerini yakından izleyerek; estetik, fonksiyonellik ve dayanıklılığı bir arada sunan ürün portföyümüzü sürekli zenginleştirmektir.

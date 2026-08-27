@@ -128,7 +128,7 @@ export default function HomePage() {
               <h3>VİZYONUMUZ</h3>
             </div>
             <p>
-              Vizyonumuz; bölgesel liderliğimizi ulusal düzeye taşıyarak iç mimari ahşap yüzeyler, akustik duvar panelleri ve PVC membran grubunda yenilikçi tasarımların ve güvenilir tedariğin ilk adresi olmaktır.
+              Vizyonumuz; bölgesel liderliğimizi ulusal düzeye taşıyarak iç mimari ahşap yüzeyler, akustik duvar panelleri ve membran grubunda yenilikçi tasarımların ve güvenilir tedariğin ilk adresi olmaktır.
             </p>
           </div>
         </div>
@@ -143,13 +143,15 @@ export default function HomePage() {
             <span className="section-subtitle-gold">KESİNTİSİZ İLETİŞİM HATLARI</span>
             <h2>Bizimle İletişime Geçin</h2>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', lineHeight: '1.7' }}>
-              İç mimari projeleriniz, metraj bazlı fiyat teklifleriniz, numune talepleriniz ve lojistik sevkiyat detayları için doğrudan telefon veya WhatsApp hattımızdan bize ulaşabilirsiniz.
+              Metraj bazlı fiyat teklifleri, numune gönderimi ve lojistik detaylar için bize telefon ya da WhatsApp hattımızdan anında ulaşın.
             </p>
 
             <div className="contact-buttons-box">
               <a href={`tel:${phoneNumber}`} className="home-contact-btn phone-style">
-                <Phone size={22} />
-                <div>
+                <div className="contact-icon-box phone-icon">
+                  <Phone size={24} />
+                </div>
+                <div className="contact-btn-text">
                   <small>Telefon İletişim Hattı</small>
                   <strong>+90 (533) 641 58 37</strong>
                 </div>
@@ -161,9 +163,11 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="home-contact-btn whatsapp-style"
               >
-                <MessageCircle size={22} />
-                <div>
-                  <small>WhatsApp Canlı Destek & Teklif</small>
+                <div className="contact-icon-box whatsapp-icon">
+                  <MessageCircle size={24} />
+                </div>
+                <div className="contact-btn-text">
+                  <small>WhatsApp İletişim Hattı</small>
                   <strong>+90 (533) 641 58 37</strong>
                 </div>
               </a>
