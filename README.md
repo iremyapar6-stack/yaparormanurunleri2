@@ -1,0 +1,1 @@
+# yaparorman-r-nleri
