@@ -39,6 +39,14 @@ export default function CategoryPage() {
     { code: '749 Sm Fırtına Gri', hex: '#5F6166' },
   ];
 
+  const suntaColors = [
+    { code: 'Mat Beyaz', hex: '#F4F5F7' },
+    { code: 'Parlak Beyaz', hex: '#FFFFFF' },
+    { code: 'Koton Gri', hex: '#C5C7CB' },
+    { code: 'Nil Ceviz', hex: '#6E472D' },
+    { code: 'Hamilton', hex: '#A87948' },
+  ];
+
   // Specific detailed varieties for each category
   const categoryVarieties = {
     membran: [
@@ -405,7 +413,7 @@ export default function CategoryPage() {
             margin: 0,
             letterSpacing: '-0.5px'
           }}>
-            Stoklu Renk & Super Mat Renk Kodları
+            {slug === 'sunta' ? 'Stoklu Sunta & Suntalam Renk Kartelası' : 'Stoklu Renk & Super Mat Renk Kodları'}
           </h2>
         </div>
 
@@ -416,7 +424,7 @@ export default function CategoryPage() {
             gap: '1.5rem',
           }}
         >
-          {superMatColors.map((color) => (
+          {(slug === 'sunta' ? suntaColors : superMatColors).map((color) => (
             <div
               key={color.code}
               onClick={() => handleWhatsAppInquiry(color.code)}

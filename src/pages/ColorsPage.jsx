@@ -26,6 +26,14 @@ export default function ColorsPage() {
     { code: '404 Masif Ladin', hex: '#E3C099', isLight: true },
   ];
 
+  const suntaRenkler = [
+    { code: 'Mat Beyaz', hex: '#F4F5F7', isLight: true },
+    { code: 'Parlak Beyaz', hex: '#FFFFFF', isLight: true },
+    { code: 'Koton Gri', hex: '#C5C7CB', isLight: true },
+    { code: 'Nil Ceviz', hex: '#6E472D', isLight: false },
+    { code: 'Hamilton', hex: '#A87948', isLight: false },
+  ];
+
   const handleCopy = (code) => {
     navigator.clipboard.writeText(code);
     setCopiedCode(code);
@@ -166,6 +174,93 @@ export default function ColorsPage() {
             }}
           >
             {ahsapRenkler.map((color) => (
+              <div
+                key={color.code}
+                onClick={() => handleWhatsAppColor(color.code)}
+                style={{
+                  background: '#FFFFFF',
+                  borderRadius: '6px',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.06)',
+                  border: '1px solid #E2E8F0',
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                }}
+                className="color-swatch-box"
+              >
+                <div
+                  style={{
+                    height: '200px',
+                    backgroundColor: color.hex,
+                    borderBottom: '1px solid #E2E8F0',
+                    position: 'relative',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    justify: 'flex-end',
+                    padding: '0.75rem',
+                  }}
+                >
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleCopy(color.code);
+                    }}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.85)',
+                      backdropFilter: 'blur(4px)',
+                      border: '1px solid #CBD5E1',
+                      borderRadius: '4px',
+                      padding: '0.35rem 0.6rem',
+                      fontSize: '0.75rem',
+                      fontWeight: '700',
+                      color: '#0F172A',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.35rem',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {copiedCode === color.code ? (
+                      <>
+                        <Check size={14} color="#16A34A" />
+                        <span>Kopyalandı</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy size={14} />
+                        <span>Kodu Kopyala</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                <div style={{ padding: '0.85rem 1rem', background: '#FFFFFF', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontWeight: '800', fontSize: '1rem', color: '#1E293B' }}>
+                    {color.code}
+                  </span>
+                  <MessageCircle size={18} color="var(--brand-red)" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Sunta & Suntalam Renk Kartelası Section */}
+        <section style={{ marginTop: '4rem' }}>
+          <div style={{ borderBottom: '3px solid #DC2626', paddingBottom: '0.6rem', marginBottom: '2rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: '800', color: '#0F172A' }}>
+              Sunta & Suntalam Renk Kartelası
+            </h2>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+              gap: '2rem',
+            }}
+          >
+            {suntaRenkler.map((color) => (
               <div
                 key={color.code}
                 onClick={() => handleWhatsAppColor(color.code)}
