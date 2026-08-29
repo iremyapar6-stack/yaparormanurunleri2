@@ -225,27 +225,85 @@ export default function CategoryPage() {
           </p>
 
           {/* Görsel Üzerindeki Kısa Bilgi Kartı (Boy, En, Kalınlık, Kalite) */}
-          <div className="hero-quick-specs-floating">
-            <div className="spec-item-chip">
-              <span className="spec-label">📏 BOY</span>
-              <strong className="spec-val">{mainProduct.quickSpecs?.boy || '2800 mm'}</strong>
+          {slug === 'sunta' ? (
+            <div className="hero-quick-specs-options-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', width: '100%', maxWidth: '860px', margin: '1.25rem auto 1.75rem auto' }}>
+              {/* 1. Seçenek */}
+              <div className="hero-quick-specs-floating" style={{ margin: 0, width: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '0.75rem 1.25rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', borderRight: '1px solid rgba(255,255,255,0.15)', paddingRight: '1rem' }}>
+                  <span style={{ background: '#DC2626', color: '#FFFFFF', fontSize: '0.75rem', fontWeight: '800', padding: '0.2rem 0.5rem', borderRadius: '4px', letterSpacing: '0.5px' }}>1. SEÇENEK</span>
+                  <span style={{ color: '#EAB308', fontSize: '0.8rem', fontWeight: '700', marginTop: '0.25rem' }}>YPR-SNT-101</span>
+                </div>
+                <div className="spec-item-chip">
+                  <span className="spec-label">📏 BOY</span>
+                  <strong className="spec-val">3.66 m (3660 mm)</strong>
+                </div>
+                <div className="spec-divider"></div>
+                <div className="spec-item-chip">
+                  <span className="spec-label">📐 EN</span>
+                  <strong className="spec-val">1.82 m (1820 mm)</strong>
+                </div>
+                <div className="spec-divider"></div>
+                <div className="spec-item-chip">
+                  <span className="spec-label">🧱 KALINLIK</span>
+                  <strong className="spec-val">18 mm</strong>
+                </div>
+                <div className="spec-divider"></div>
+                <div className="spec-item-chip">
+                  <span className="spec-label">🏆 KALİTE</span>
+                  <strong className="spec-val">E1 Standart</strong>
+                </div>
+              </div>
+
+              {/* 2. Seçenek */}
+              <div className="hero-quick-specs-floating" style={{ margin: 0, width: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '0.75rem 1.25rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', borderRight: '1px solid rgba(255,255,255,0.15)', paddingRight: '1rem' }}>
+                  <span style={{ background: '#2563EB', color: '#FFFFFF', fontSize: '0.75rem', fontWeight: '800', padding: '0.2rem 0.5rem', borderRadius: '4px', letterSpacing: '0.5px' }}>2. SEÇENEK</span>
+                  <span style={{ color: '#EAB308', fontSize: '0.8rem', fontWeight: '700', marginTop: '0.25rem' }}>YPR-SNT-102</span>
+                </div>
+                <div className="spec-item-chip">
+                  <span className="spec-label">📏 BOY</span>
+                  <strong className="spec-val">2.80 m (2800 mm)</strong>
+                </div>
+                <div className="spec-divider"></div>
+                <div className="spec-item-chip">
+                  <span className="spec-label">📐 EN</span>
+                  <strong className="spec-val">2.10 m (2100 mm)</strong>
+                </div>
+                <div className="spec-divider"></div>
+                <div className="spec-item-chip">
+                  <span className="spec-label">🧱 KALINLIK</span>
+                  <strong className="spec-val">18 mm</strong>
+                </div>
+                <div className="spec-divider"></div>
+                <div className="spec-item-chip">
+                  <span className="spec-label">🏆 KALİTE</span>
+                  <strong className="spec-val">E1 Standart</strong>
+                </div>
+              </div>
             </div>
-            <div className="spec-divider"></div>
-            <div className="spec-item-chip">
-              <span className="spec-label">📐 EN</span>
-              <strong className="spec-val">{mainProduct.quickSpecs?.en || '600 mm'}</strong>
+          ) : (
+            <div className="hero-quick-specs-floating">
+              <div className="spec-item-chip">
+                <span className="spec-label">📏 BOY</span>
+                <strong className="spec-val">{mainProduct.quickSpecs?.boy || '2800 mm'}</strong>
+              </div>
+              <div className="spec-divider"></div>
+              <div className="spec-item-chip">
+                <span className="spec-label">📐 EN</span>
+                <strong className="spec-val">{mainProduct.quickSpecs?.en || '600 mm'}</strong>
+              </div>
+              <div className="spec-divider"></div>
+              <div className="spec-item-chip">
+                <span className="spec-label">🧱 KALINLIK</span>
+                <strong className="spec-val">{mainProduct.quickSpecs?.kalinlik || '18 mm'}</strong>
+              </div>
+              <div className="spec-divider"></div>
+              <div className="spec-item-chip">
+                <span className="spec-label">🏆 KALİTE</span>
+                <strong className="spec-val">{mainProduct.quickSpecs?.govde || '1. Sınıf Ahşap'}</strong>
+              </div>
             </div>
-            <div className="spec-divider"></div>
-            <div className="spec-item-chip">
-              <span className="spec-label">🧱 KALINLIK</span>
-              <strong className="spec-val">{mainProduct.quickSpecs?.kalinlik || '18 mm'}</strong>
-            </div>
-            <div className="spec-divider"></div>
-            <div className="spec-item-chip">
-              <span className="spec-label">🏆 KALİTE</span>
-              <strong className="spec-val">{mainProduct.quickSpecs?.govde || '1. Sınıf Ahşap'}</strong>
-            </div>
-          </div>
+          )}
 
           <div className="cat-hero-actions">
             <a href={`tel:${phoneNumber}`} className="btn-primary">
