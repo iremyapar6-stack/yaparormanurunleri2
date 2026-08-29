@@ -28,15 +28,17 @@ export default function CategoryPage() {
   // Find main category product
   const mainProduct = products.find((p) => p.category === slug) || products[0];
 
-  const superMatColors = [
-    { code: '312 Sm Beyaz', hex: '#FFFFFF' },
-    { code: '746 Sm Krem', hex: '#E8E2D5' },
-    { code: '2277 Sm Açık Gri', hex: '#D8D9E3' },
-    { code: '747 Sm Yeni Gri', hex: '#BDBCB4' },
-    { code: '2272 Sm Pink', hex: '#C88A8E' },
-    { code: '2271 Sm Oliva', hex: '#4A5D50' },
-    { code: '748 Sm Kaya Gri', hex: '#7F8289' },
-    { code: '749 Sm Fırtına Gri', hex: '#5F6166' },
+  const akustikColors = [
+    { code: 'Antrasit', hex: '#2E3338' },
+    { code: 'Barok', hex: '#5C3D28' },
+    { code: 'Kaya Gri', hex: '#787D82' },
+    { code: 'Gri Meşe', hex: '#9E988D' },
+    { code: 'Gold', hex: '#C5A059' },
+    { code: 'Mikro Antrasit', hex: '#1F2428' },
+    { code: 'Meşe Alabama', hex: '#B88A58' },
+    { code: 'Vizyon Gri', hex: '#8A8580' },
+    { code: 'Kum Gri', hex: '#BDB6AB' },
+    { code: 'Teak', hex: '#82522C' },
   ];
 
   const suntaColors = [
@@ -413,7 +415,7 @@ export default function CategoryPage() {
             margin: 0,
             letterSpacing: '-0.5px'
           }}>
-            {slug === 'sunta' ? 'Stoklu Sunta & Suntalam Renk Kartelası' : 'Stoklu Renk & Super Mat Renk Kodları'}
+            {slug === 'akustik' ? 'Akustik Panel Renk Kartelası' : slug === 'sunta' ? 'Stoklu Sunta & Suntalam Renk Kartelası' : 'Stoklu Renk Kartelası'}
           </h2>
         </div>
 
@@ -424,7 +426,7 @@ export default function CategoryPage() {
             gap: '1.5rem',
           }}
         >
-          {(slug === 'sunta' ? suntaColors : superMatColors).map((color) => (
+          {(slug === 'sunta' ? suntaColors : akustikColors).map((color) => (
             <div
               key={color.code}
               onClick={() => handleWhatsAppInquiry(color.code)}
