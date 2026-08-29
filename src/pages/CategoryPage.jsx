@@ -384,9 +384,13 @@ export default function CategoryPage() {
 
       {/* Color Swatches Grid (Super Mat & Kartela Colors) */}
       <section style={{ maxWidth: '1320px', margin: '3rem auto 5rem auto', padding: '0 1.5rem' }}>
-        {/* Slatted Texture Banner above Color Palettes */}
-        <div style={{ borderRadius: '12px', overflow: 'hidden', marginBottom: '2.5rem', boxShadow: '0 10px 30px rgba(0,0,0,0.4)', border: '1px solid var(--border-gold)', height: '240px' }}>
-          <img src="/renk-paleti-banner.png" alt="Çıtalı Panel Doku Banner" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center' }} />
+        {/* Slatted Texture Banner / Sunta Banner above Color Palettes */}
+        <div style={{ borderRadius: '12px', overflow: 'hidden', marginBottom: '2.5rem', boxShadow: '0 10px 30px rgba(0,0,0,0.4)', border: '1px solid var(--border-gold)', height: '240px', background: slug === 'sunta' ? '#FFFFFF' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <img
+            src={slug === 'sunta' ? '/sunta-banner.png' : '/renk-paleti-banner.png'}
+            alt={slug === 'sunta' ? 'Sunta Levha Görseli' : 'Çıtalı Panel Doku Banner'}
+            style={{ width: '100%', height: '100%', objectFit: slug === 'sunta' ? 'contain' : 'cover', objectPosition: 'center center', padding: slug === 'sunta' ? '1rem' : '0' }}
+          />
         </div>
 
         <div style={{ marginBottom: '2.5rem', borderLeft: '4px solid var(--brand-red)', paddingLeft: '1.25rem' }}>
