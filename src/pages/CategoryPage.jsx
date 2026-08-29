@@ -97,24 +97,24 @@ export default function CategoryPage() {
     ],
     sunta: [
       {
-        title: "E1 Kalite Ham Sunta (Yonga Levha)",
+        title: "E1 Kalite Ham Sunta (Yonga Levha) - 3.66 × 1.82 m",
         code: "YPR-SNT-101",
         surface: "Zımparalanmış Düz Ham Yüzey",
-        boy: "3660 mm",
-        en: "1830 mm",
+        boy: "3660 mm (3.66 m)",
+        en: "1820 mm (1.82 m)",
         kalinlik: "18 mm",
         image: "/sunta-levha.png",
-        desc: "Vida tutma mukavemeti yüksek, mobilya gövdesi imalatında kullanılan kaliteli ham yonga levha."
+        desc: "Vida tutma mukavemeti yüksek, mobilya gövdesi imalatında kullanılan E1 kalite ham yonga levha."
       },
       {
-        title: "Çift Yüz Melamin Kaplı Sunta-Lam",
+        title: "E1 Kalite Ham Sunta (Yonga Levha) - 2.80 × 2.10 m",
         code: "YPR-SNT-102",
-        surface: "Melamin Kaplı Dekoratif Doku",
-        boy: "3660 mm",
-        en: "1830 mm",
+        surface: "Zımparalanmış Düz Ham Yüzey",
+        boy: "2800 mm (2.80 m)",
+        en: "2100 mm (2.10 m)",
         kalinlik: "18 mm",
-        image: "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=1200&q=80",
-        desc: "Çizilmeye dayanıklı mobilya ve raf gövdeleri için dekoratif melamin kaplı yonga levha."
+        image: "/sunta-levha.png",
+        desc: "Geniş formatlı mobilya ve panel imalatı için E1 kalite ham yonga levha."
       }
     ],
     mdf: [

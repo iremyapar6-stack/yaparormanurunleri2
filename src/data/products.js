@@ -117,8 +117,8 @@ export const products = [
       "Raf ve gardırop modülleri"
     ],
     quickSpecs: {
-      boy: "3660 mm",
-      en: "1830 mm",
+      boy: "3660 mm (3.66 m)",
+      en: "1820 mm (1.82 m)",
       renk: "Ham Yonga Ahşap",
       renkKodu: "YPR-SNT101",
       kalinlik: "18 mm",
@@ -126,8 +126,8 @@ export const products = [
       govde: "E1 Standart Yonga Levha"
     },
     specs: {
-      "Boy (Uzunluk)": "3660 mm",
-      "En (Genişlik)": "1830 mm",
+      "Boy (Uzunluk)": "3660 mm (3.66 m) / 2800 mm (2.80 m)",
+      "En (Genişlik)": "1820 mm (1.82 m) / 2100 mm (2.10 m)",
       "Renk": "Ham Yonga",
       "Renk Kodu": "YPR-SNT101",
       "Kalınlık": "18 mm"
