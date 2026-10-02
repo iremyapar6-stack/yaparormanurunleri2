@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 /* ==========================================================================
-   PALET 2: ENDÜSTRİYEL & ŞIK MİMARİ STÜDYO - DESIGN TOKENS
+   YUMUŞAK KUM & BEJ (AÇIK VE SADE ALTERNATİF) - DESIGN TOKENS
    ========================================================================== */
 :root {
   /* Zemin Renkleri */
@@ -12,10 +12,10 @@
   --card-bg: #FFFFFF;
   --card-bg-hover: #EAECEE;
 
-  /* Ana Vurgu Rengi: Sıcak Hardal / Eskitme Pirinç */
-  --brand-red: #C59B27;
-  --brand-red-hover: #B8860B;
-  --brand-red-glow: rgba(197, 155, 39, 0.3);
+  /* Yumuşak Kum & Bej (Açık ve Sade Accent) */
+  --brand-red: #D6C7A1;
+  --brand-red-hover: #E0D2B4;
+  --brand-red-glow: rgba(214, 199, 161, 0.3);
 
   /* İkincil / Tamamlayıcı Vurgu: Derin Petrol */
   --brand-green: #2F4858;
@@ -23,33 +23,33 @@
   --brand-green-glow: rgba(47, 72, 88, 0.3);
 
   --primary-walnut: #24282C;
-  --primary-oak: #C59B27;
-  --accent-gold: #C59B27;        /* Sıcak Hardal / Eskitme Pirinç */
-  --accent-brass: #C59B27;
-  --accent-brass-hover: #B8860B;
-  --accent-brass-glow: rgba(197, 155, 39, 0.3);
+  --primary-oak: #D6C7A1;
+  --accent-gold: #D6C7A1;        /* Yumuşak Kum / Bej Accent (#D6C7A1) */
+  --accent-brass: #D6C7A1;
+  --accent-brass-hover: #E0D2B4;  /* Bej Hover (#E0D2B4) */
+  --accent-brass-glow: rgba(214, 199, 161, 0.3);
   
   --accent-petrol: #2F4858;       /* Derin Petrol (Butonlar & Hover) */
   --accent-petrol-hover: #1E3340;
   --accent-green: #2F4858;
 
-  /* Metinler: Koyu Grafit */
-  --text-primary: #1C2024;
+  /* Metinler: #2C2C2C (Koyu Gri/Siyah) */
+  --text-primary: #2C2C2C;
   --text-secondary: #4A525A;
   --text-muted: #707A84;
 
   /* Kenarlıklar & Gölgeler */
-  --border-dark: rgba(28, 32, 36, 0.12);
-  --border-gold: rgba(197, 155, 39, 0.4);
-  --border-red: rgba(197, 155, 39, 0.4);
+  --border-dark: rgba(44, 44, 44, 0.12);
+  --border-gold: rgba(214, 199, 161, 0.5);
+  --border-red: rgba(214, 199, 161, 0.5);
   --border-green: rgba(47, 72, 88, 0.4);
 
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
-  --shadow-dark: 0 10px 30px rgba(28, 32, 36, 0.08);
-  --shadow-gold: 0 10px 30px rgba(197, 155, 39, 0.25);
-  --shadow-red: 0 10px 30px rgba(197, 155, 39, 0.25);
+  --shadow-dark: 0 10px 30px rgba(44, 44, 44, 0.08);
+  --shadow-gold: 0 10px 30px rgba(214, 199, 161, 0.25);
+  --shadow-red: 0 10px 30px rgba(214, 199, 161, 0.25);
 
   /* Fontlar */
   --font-heading: 'Montserrat', sans-serif;
@@ -57,7 +57,7 @@
 }
 
 /* ==========================================================================
-   LIGHT THEME OVERRIDES (Palet 2 ile Uyumlu)
+   LIGHT THEME OVERRIDES (Kum & Bej ile Uyumlu)
    ========================================================================== */
 [data-theme="light"] {
   --bg-dark: #24282C;
@@ -66,13 +66,13 @@
   --card-bg: #FFFFFF;
   --card-bg-hover: #EAECEE;
 
-  --text-primary: #1C2024;
+  --text-primary: #2C2C2C;
   --text-secondary: #4A525A;
   --text-muted: #707A84;
-  --border-dark: rgba(28, 32, 36, 0.12);
-  --border-gold: rgba(197, 155, 39, 0.35);
+  --border-dark: rgba(44, 44, 44, 0.12);
+  --border-gold: rgba(214, 199, 161, 0.4);
 
-  --shadow-dark: 0 4px 20px rgba(28, 32, 36, 0.06);
+  --shadow-dark: 0 4px 20px rgba(44, 44, 44, 0.06);
 }
 
 [data-theme="light"] .header {
@@ -450,14 +450,14 @@ body {
 
 .btn-primary:hover {
   background: var(--accent-petrol-hover, #1E3340);
-  border-color: var(--accent-gold, #C59B27);
+  border-color: var(--accent-gold, #D6C7A1);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(47, 72, 88, 0.5);
 }
 
 .btn-secondary {
-  background: var(--accent-gold, #C59B27);
-  color: #1C2024;
+  background: var(--accent-gold, #D6C7A1);
+  color: #2C2C2C;
   padding: 0.85rem 1.6rem;
   border-radius: var(--radius-sm);
   text-decoration: none;
@@ -466,15 +466,15 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border: 1px solid var(--accent-gold, #C59B27);
+  border: 1px solid var(--accent-gold, #D6C7A1);
   transition: all 0.25s ease;
   box-shadow: var(--shadow-gold);
 }
 
 .btn-secondary:hover {
-  background: var(--brand-red-hover, #B8860B);
-  border-color: var(--brand-red-hover, #B8860B);
-  color: #FFFFFF;
+  background: var(--brand-red-hover, #E0D2B4);
+  border-color: var(--brand-red-hover, #E0D2B4);
+  color: #2C2C2C;
   transform: translateY(-2px);
 }
 
