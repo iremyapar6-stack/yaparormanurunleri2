@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
 import HeroSlider from '../components/HeroSlider';
-import { MessageCircle, Phone, MapPin, Search as SearchIcon } from 'lucide-react';
+import { MessageCircle, Phone, MapPin } from 'lucide-react';
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -11,9 +11,6 @@ export default function HomePage() {
     categories,
     filteredProducts,
     selectedCategory,
-    setSelectedCategory,
-    searchQuery,
-    setSearchQuery,
   } = useProducts();
 
   const phoneNumber = "+905336415837";
@@ -21,13 +18,6 @@ export default function HomePage() {
 
   const handleCardClick = (categorySlug) => {
     navigate(`/kategori/${categorySlug}`);
-  };
-
-  const handleTabClick = (catId) => {
-    setSelectedCategory(catId);
-    if (catId !== 'all') {
-      navigate(`/kategori/${catId}`);
-    }
   };
 
   return (
@@ -49,34 +39,6 @@ export default function HomePage() {
           <p style={{ color: 'var(--text-secondary)', maxWidth: '780px', margin: '0.8rem auto 0 auto', fontSize: '1.05rem', lineHeight: '1.7', fontStyle: 'italic' }}>
             "Mekânlarınıza modern bir dokunuş yaparken dayanıklılıktan da ödün vermeyin. Kaliteli malzemelerden üretilen ve uzun ömürlü kullanım sunan panellerimiz, mekânlarınızın atmosferini anında değiştirir."
           </p>
-        </div>
-
-        <div className="filter-box">
-          <div className="search-input-wrapper">
-            <SearchIcon className="search-icon-inside" size={20} />
-            <input
-              type="text"
-              placeholder="Membran, Akustik, Sunta, MDF, Lambri, Arkalık veya Panel arayın..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
-
-          <div className="category-tabs">
-            {categories.map((cat) => {
-              const isActive = selectedCategory === cat.id;
-
-              return (
-                <button
-                  key={cat.id}
-                  className={`tab-btn ${isActive ? 'active' : ''}`}
-                  onClick={() => handleTabClick(cat.id)}
-                >
-                  <span>{cat.name}</span>
-                </button>
-              );
-            })}
-          </div>
         </div>
       </section>
 

@@ -21,7 +21,11 @@ export const products = [
     categoryName: "Membran",
     slug: "pvc-membran-kaplama",
     images: [
-      "/membran-kaplama.jpg"
+      "/membran/berceste-ana-mutfak.png",
+      "/membran/berceste-detay-kolaj.png",
+      "/membran/berceste-b10-b11.png",
+      "/membran/berceste-b12-b13.png",
+      "/membran/berceste-b14-b15.png"
     ],
     shortDescription: "Mobilya kapaklarında mükemmel vakum tutunması ve parmak izi bırakmayan mat/parlak PVC membran kaplama.",
     fullDescription: "3D vakum pres makinelerinde yüksek esneklik ve kusursuz kenar sarma performansı sunan PVC membran folyodur.",
@@ -273,7 +277,7 @@ export const products = [
     categoryName: "Paneller",
     slug: "dekoratif-ahsap-duvar-panelleri",
     images: [
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"
+      "/panel-levha.png"
     ],
     shortDescription: "İç mekan mimarisinde estetik ve lüks görünüm sağlayan dekoratif ahşap duvar ve mobilya panelleri.",
     fullDescription: "Çeşitli yüzey dokularına ve renklere sahip, kolay monte edilebilir mimari ahşap panel çözümleri.",

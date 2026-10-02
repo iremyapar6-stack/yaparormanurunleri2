@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
-import { MessageCircle, Phone, ArrowLeft, CheckCircle2, Copy, Check } from 'lucide-react';
+import { MessageCircle, Phone, ArrowLeft, CheckCircle2, Copy, Check, X, Sparkles } from 'lucide-react';
 
 export default function CategoryPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const { categories, products } = useProducts();
   const [copiedCode, setCopiedCode] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
 
   const phoneNumber = "+905336415837";
   const whatsappNumber = "905336415837";
@@ -49,169 +50,10 @@ export default function CategoryPage() {
     { code: 'Hamilton', hex: '#A87948' },
   ];
 
-  // Specific detailed varieties for each category
-  const categoryVarieties = {
-    membran: [
-      {
-        title: "Soft Touch Mat Antrasit Membran",
-        code: "YPR-MBR-401",
-        surface: "Parmak İzi Tutmaz Soft Touch Mat",
-        boy: "100 m Rulo",
-        en: "1400 mm",
-        kalinlik: "0.35 mm",
-        image: "/membran-kaplama.jpg",
-        desc: "Lüks mutfak ve banyo dolap kapakları için ipeksi mat dokunuşlu 3D vakum membran folyo."
-      },
-      {
-        title: "3D Kabartmalı Meşe Ahşap Membran",
-        code: "YPR-MBR-402",
-        surface: "3D Ahşap Doku Kabartmalı",
-        boy: "100 m Rulo",
-        en: "1400 mm",
-        kalinlik: "0.40 mm",
-        image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80",
-        desc: "Doğal meşe damar dokusunu vakum esnekliği ile buluşturan ahşap desenli folyo."
-      },
-      {
-        title: "High Gloss Parlak Beyaz Membran",
-        code: "YPR-MBR-403",
-        surface: "Yüksek Parlaklıkta Akrilik Gloss",
-        boy: "100 m Rulo",
-        en: "1400 mm",
-        kalinlik: "0.40 mm",
-        image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80",
-        desc: "Ayna parlaklığında çizilmeye dirençli mutfak dolabı membran kaplama folyosu."
-      }
-    ],
-    akustik: [
-      {
-        title: "Doğal Meşe Çıtalı Akustik Duvar Paneli",
-        code: "YPR-AKU-201",
-        surface: "Doğal Meşe Ahşap Kaplama",
-        boy: "2800 mm",
-        en: "600 mm",
-        kalinlik: "20 mm",
-        image: "/akustik-duvar-paneli.png",
-        desc: "Siyah keçe alt zemin üzerine doğal meşe çıtalar ile tasarlanmış üstün ses yalıtım paneli."
-      },
-      {
-        title: "Derin Koyu Ceviz Akustik Panel",
-        code: "YPR-AKU-202",
-        surface: "Doğal Ceviz Vernikli Yüzey",
-        boy: "2800 mm",
-        en: "600 mm",
-        kalinlik: "20 mm",
-        image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
-        desc: "Prestijli ofis ve konut mekanları için ses yankısını önleyen koyu ceviz çıtalı panel."
-      }
-    ],
-    sunta: [
-      {
-        title: "E1 Kalite Ham Sunta (Yonga Levha) - 3.66 × 1.82 m",
-        code: "YPR-SNT-101",
-        surface: "Zımparalanmış Düz Ham Yüzey",
-        boy: "3660 mm (3.66 m)",
-        en: "1820 mm (1.82 m)",
-        kalinlik: "18 mm",
-        image: "/sunta-levha.png",
-        desc: "Vida tutma mukavemeti yüksek, mobilya gövdesi imalatında kullanılan E1 kalite ham yonga levha."
-      },
-      {
-        title: "E1 Kalite Ham Sunta (Yonga Levha) - 2.80 × 2.10 m",
-        code: "YPR-SNT-102",
-        surface: "Zımparalanmış Düz Ham Yüzey",
-        boy: "2800 mm (2.80 m)",
-        en: "2100 mm (2.10 m)",
-        kalinlik: "18 mm",
-        image: "/sunta-levha.png",
-        desc: "Geniş formatlı mobilya ve panel imalatı için E1 kalite ham yonga levha."
-      }
-    ],
-    mdf: [
-      {
-        title: "Birinci Sınıf Ham MDF Levha",
-        code: "YPR-MDF-301",
-        surface: "Pürüzsüz Zımparalanmış Ham Lif",
-        boy: "3660 mm",
-        en: "1830 mm",
-        kalinlik: "18 mm",
-        image: "/mdf-levha.png",
-        desc: "CNC freze oymacılık ve lake boya kapak imalatına uygun homojen yoğunluklu MDF."
-      },
-      {
-        title: "Çift Yüz Melamin Kaplı MDF-Lam",
-        code: "YPR-MDF-302",
-        surface: "Dekoratif Melamin Kağıt Kaplama",
-        boy: "3660 mm",
-        en: "1830 mm",
-        kalinlik: "18 mm",
-        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
-        desc: "Dolap ve mobilya imalatında direkt kullanılan lüks yüzeyli MDF-Lam levha."
-      }
-    ],
-    lambri: [
-      {
-        title: "Lüks LED Işıklı Ahşap Lambri & Profil",
-        code: "YPR-LMB-101",
-        surface: "Masif Ahşap Pürüzsüz Doku",
-        boy: "3000 mm",
-        en: "95 mm",
-        kalinlik: "15 mm",
-        image: "/lambri-kaplama.png",
-        desc: "İç mekan duvar ve tavanlarında estetik geçmeli masif ahşap çıta ve profil kaplama."
-      },
-      {
-        title: "İthal İskandinav Ladin Tavan Lambirisi",
-        code: "YPR-LMB-102",
-        surface: "Doğal Açık Renk Ekstra Ladin",
-        boy: "4000 mm",
-        en: "120 mm",
-        kalinlik: "18 mm",
-        image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80",
-        desc: "Sık lifli kuzey ladin kerestesinden imal edilen geniş ferah tavan lambirisi."
-      }
-    ],
-    arkalik: [
-      {
-        title: "3 mm Renkli & Ahşap Desenli MDF Arkalık",
-        code: "YPR-ARK-01",
-        surface: "Tek Yüz Laklı Koruyucu Boya",
-        boy: "2800 mm",
-        en: "2100 mm",
-        kalinlik: "3 mm",
-        image: "/arkalik-levha.jpg",
-        desc: "Gardırop, dolap ve çekmece tabanlarında rijit kapatıcılık sağlayan laklı ince MDF."
-      }
-    ],
-    panel: [
-      {
-        title: "Lüks Mimari Ahşap & Mermer Desen Panel",
-        code: "YPR-PNL-01",
-        surface: "Dekoratif Ahşap & Mermer Doku",
-        boy: "2800 mm",
-        en: "600 mm",
-        kalinlik: "18 mm",
-        image: "/panel-levha.png",
-        desc: "TV arkası ve salon vurgu duvarları için lüks dikey sergileme mimari panel sistemi."
-      }
-    ]
-  };
-
-  const currentVarieties = categoryVarieties[slug] || [
-    {
-      title: mainProduct.title,
-      code: mainProduct.productCode,
-      surface: mainProduct.quickSpecs?.yuzey || '1. Sınıf Ahşap Yüzey',
-      boy: mainProduct.quickSpecs?.boy || '2800 mm',
-      en: mainProduct.quickSpecs?.en || '600 mm',
-      kalinlik: mainProduct.quickSpecs?.kalinlik || '18 mm',
-      image: mainProduct.images[0],
-      desc: mainProduct.shortDescription
-    }
-  ];
+  // Berceste Serisi kaldırıldı
 
   const handleWhatsAppInquiry = (varietyTitle) => {
-    const text = `Merhaba Yapar Orman Ürünleri, ${categoryData.name} kategorinizdeki "${varietyTitle || categoryData.name}" renk/model kodu hakkında bilgi almak istiyorum.`;
+    const text = `Merhaba Yapar Orman Ürünleri, ${categoryData.name} kategorinizdeki "${varietyTitle || categoryData.name}" hakkında bilgi ve fiyat teklifi almak istiyorum.`;
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -229,12 +71,16 @@ export default function CategoryPage() {
           </button>
 
           <span className="cat-hero-badge">YAPAR ORMAN ÜRÜN VİTRİNİ</span>
-          <h1 className="cat-hero-title">{categoryData.name}</h1>
+          <h1 className="cat-hero-title">
+            {slug === 'membran' ? 'Membran Kapaklar & Berceste Serisi' : categoryData.name}
+          </h1>
           <p className="cat-hero-slogan">
-            "Mekânlarınıza modern bir dokunuş yaparken dayanıklılıktan da ödün vermeyin. Kaliteli malzemelerden üretilen ve uzun ömürlü kullanım sunan panellerimiz, mekânlarınızın atmosferini anında değiştirir."
+            {slug === 'membran'
+              ? '"Mutfak ve banyolarınızda zamansız zarafet: Kusursuz 3D vakum teknolojisi ve lake pürüzsüzlüğünde parmak izi tutmaz membran yüzeyler."'
+              : '"Mekânlarınıza modern bir dokunuş yaparken dayanıklılıktan da ödün vermeyin. Kaliteli malzemelerden üretilen ve uzun ömürlü kullanım sunan panellerimiz, mekânlarınızın atmosferini anında değiştirir."'}
           </p>
 
-          {/* Görsel Üzerindeki Kısa Bilgi Kartı (Boy, En, Kalınlık, Kalite) */}
+          {/* Görsel Üzerindeki Kısa Bilgi Kartı */}
           {slug === 'sunta' ? (
             <div className="hero-quick-specs-options-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', width: '100%', maxWidth: '860px', margin: '1.25rem auto 1.75rem auto' }}>
               {/* 1. Seçenek */}
@@ -289,6 +135,28 @@ export default function CategoryPage() {
                   <span className="spec-label">🏆 KALİTE</span>
                   <strong className="spec-val">E1 Standart</strong>
                 </div>
+              </div>
+            </div>
+          ) : slug === 'membran' ? (
+            <div className="hero-quick-specs-floating">
+              <div className="spec-item-chip">
+                <span className="spec-label">✨ SERİ</span>
+                <strong className="spec-val">Berceste Serisi</strong>
+              </div>
+              <div className="spec-divider"></div>
+              <div className="spec-item-chip">
+                <span className="spec-label">📐 MODELLER</span>
+                <strong className="spec-val">B10 — B15</strong>
+              </div>
+              <div className="spec-divider"></div>
+              <div className="spec-item-chip">
+                <span className="spec-label">🛡️ YÜZEY</span>
+                <strong className="spec-val">Parmak İzi Tutmaz</strong>
+              </div>
+              <div className="spec-divider"></div>
+              <div className="spec-item-chip">
+                <span className="spec-label">🏆 KAPLAMA</span>
+                <strong className="spec-val">3D Vakum Pres</strong>
               </div>
             </div>
           ) : (
@@ -364,6 +232,40 @@ export default function CategoryPage() {
                   "Yaşam alanlarınıza hem huzur hem de şıklık katmak için koleksiyonumuzu incelemeye başlayın."
                 </p>
               </div>
+            ) : slug === 'membran' ? (
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                  <Sparkles size={20} color="var(--accent-gold)" />
+                  <span style={{ color: 'var(--accent-gold)', fontWeight: '800', fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                    ÖZEL KAPAK KOLEKSİYONU
+                  </span>
+                </div>
+                <h2 style={{ fontSize: '1.85rem', color: '#FFFFFF', fontWeight: '900', marginBottom: '0.75rem', fontFamily: 'var(--font-heading)' }}>
+                  Berceste Serisi Membran Kapak: Zamansız Şıklık & Kusursuz Yüzeyler
+                </h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.7', marginBottom: '1.25rem' }}>
+                  Modern, country ve neo-klasik mutfak ve banyolar için özel olarak tasarlanan <strong>Berceste Serisi</strong>; yüksek yoğunluklu E1 kalite MDF üzerine 3D vakum pres teknolojisi ile kaplanan parmak izi tutmaz, ipeksi mat PVC membran yüzeylerden üretilmektedir. Eksiz kenar sarımı sayesinde suya, buhara ve neme karşı %100 sızdırmazlık sunar.
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.85rem', marginBottom: '1.25rem' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '0.85rem 1rem', borderRadius: '8px', borderLeft: '3px solid var(--accent-gold)' }}>
+                    <strong style={{ color: 'var(--accent-gold)', display: 'block', fontSize: '0.95rem', marginBottom: '0.2rem' }}>Eksiz 3D Vakum Sarım:</strong>
+                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Kenar bandı olmadan tek parça kaplama ile neme ve suya tam dayanıklılık.</span>
+                  </div>
+                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '0.85rem 1rem', borderRadius: '8px', borderLeft: '3px solid var(--accent-gold)' }}>
+                    <strong style={{ color: 'var(--accent-gold)', display: 'block', fontSize: '0.95rem', marginBottom: '0.2rem' }}>Parmak İzi Tutmaz Yüzey:</strong>
+                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Soft Touch ipeksi mat doku ile kolay temizlenir, leke ve parmak izi bırakmaz.</span>
+                  </div>
+                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '0.85rem 1rem', borderRadius: '8px', borderLeft: '3px solid var(--accent-gold)' }}>
+                    <strong style={{ color: 'var(--accent-gold)', display: 'block', fontSize: '0.95rem', marginBottom: '0.2rem' }}>B10 - B15 Profil Çeşitleri:</strong>
+                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Minimalist düz pahtan kademeli ve kasetli modellere zengin CNC profil seçenekleri.</span>
+                  </div>
+                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '0.85rem 1rem', borderRadius: '8px', borderLeft: '3px solid var(--accent-gold)' }}>
+                    <strong style={{ color: 'var(--accent-gold)', display: 'block', fontSize: '0.95rem', marginBottom: '0.2rem' }}>Yüksek Yoğunluklu E1 MDF:</strong>
+                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Frezeli desenlerde pürüzsüz derinlik ve uzun yıllar formunu koruyan gövde.</span>
+                  </div>
+                </div>
+              </div>
             ) : (
               <div>
                 <h2>Bu Ürün Grubu Nedir?</h2>
@@ -390,113 +292,445 @@ export default function CategoryPage() {
         </div>
       </section>
 
+      {/* MEMBRAN YENİ İÇERİK ALANI */}
+      {slug === 'membran' ? (
+        <section style={{ maxWidth: '1320px', margin: '3rem auto 5rem auto', padding: '0 1.5rem' }}>
+          <div style={{ marginBottom: '2.5rem', borderLeft: '4px solid var(--brand-red)', paddingLeft: '1.25rem' }}>
+            <span style={{ color: 'var(--brand-red)', fontWeight: '800', fontSize: '0.85rem', letterSpacing: '2.5px', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>
+              MEMBRAN KAPAK KOLEKSİYONU
+            </span>
+            <h2 style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: '2.2rem',
+              fontWeight: '900',
+              color: 'var(--accent-gold)',
+              margin: 0,
+              letterSpacing: '-0.5px'
+            }}>
+              Mutfak Uygulamaları & Kapak Modelleri
+            </h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginTop: '0.5rem' }}>
+              Yüksek kaliteli membran kapak modellerimiz ve özel mutfak tasarımları. Görsellere tıklayarak büyütebilir ve WhatsApp üzerinden hemen teklif alabilirsiniz.
+            </p>
+          </div>
 
-
-      {/* Color Swatches Grid (Super Mat & Kartela Colors) */}
-      <section style={{ maxWidth: '1320px', margin: '3rem auto 5rem auto', padding: '0 1.5rem' }}>
-        {/* Slatted Texture Banner / Sunta Banner above Color Palettes */}
-        <div style={{ borderRadius: '12px', overflow: 'hidden', marginBottom: '2.5rem', boxShadow: '0 10px 30px rgba(0,0,0,0.4)', border: '1px solid var(--border-gold)', height: '240px', background: slug === 'sunta' ? '#FFFFFF' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img
-            src={slug === 'sunta' ? '/sunta-banner.png' : '/renk-paleti-banner.png'}
-            alt={slug === 'sunta' ? 'Sunta Levha Görseli' : 'Çıtalı Panel Doku Banner'}
-            style={{ width: '100%', height: '100%', objectFit: slug === 'sunta' ? 'contain' : 'cover', objectPosition: 'center center', padding: slug === 'sunta' ? '1rem' : '0' }}
-          />
-        </div>
-
-        <div style={{ marginBottom: '2.5rem', borderLeft: '4px solid var(--brand-red)', paddingLeft: '1.25rem' }}>
-          <span style={{ color: 'var(--brand-red)', fontWeight: '800', fontSize: '0.85rem', letterSpacing: '2.5px', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>
-            YAPAR ORMAN RENK KARTELASI
-          </span>
-          <h2 style={{
-            fontFamily: 'var(--font-heading)',
-            fontSize: '2.2rem',
-            fontWeight: '900',
-            color: 'var(--accent-gold)',
-            margin: 0,
-            letterSpacing: '-0.5px'
-          }}>
-            {slug === 'akustik' ? 'Akustik Panel Renk Kartelası' : slug === 'sunta' ? 'Stoklu Sunta & Suntalam Renk Kartelası' : 'Stoklu Renk Kartelası'}
-          </h2>
-        </div>
-
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-            gap: '1.5rem',
-          }}
-        >
-          {(slug === 'sunta' ? suntaColors : akustikColors).map((color) => (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem', alignItems: 'start' }}>
+            {/* Görsel 1: Mutfak Tasarımı */}
             <div
-              key={color.code}
-              onClick={() => handleWhatsAppInquiry(color.code)}
               style={{
-                background: '#FFFFFF',
-                borderRadius: '6px',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.15)',
-                border: '1px solid var(--border-dark)',
+                background: 'var(--card-bg)',
+                borderRadius: '12px',
+                border: '1px solid var(--border-gold)',
+                boxShadow: '0 12px 35px rgba(0,0,0,0.3)',
                 overflow: 'hidden',
-                cursor: 'pointer',
-                transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                display: 'flex',
+                flexDirection: 'column'
               }}
-              className="color-swatch-box"
             >
               <div
+                onClick={() => setPreviewImage('/membran/new-mutfak-01.jpg')}
                 style={{
-                  height: '180px',
-                  backgroundColor: color.hex,
-                  borderBottom: '1px solid #E2E8F0',
                   position: 'relative',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  justify: 'flex-end',
-                  padding: '0.65rem',
+                  height: '380px',
+                  cursor: 'pointer',
+                  overflow: 'hidden',
+                  background: '#0F172A'
                 }}
+                className="gallery-card-hover"
               >
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleCopy(color.code);
-                  }}
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.88)',
-                    backdropFilter: 'blur(4px)',
-                    border: '1px solid #CBD5E1',
-                    borderRadius: '4px',
-                    padding: '0.35rem 0.55rem',
-                    fontSize: '0.725rem',
-                    fontWeight: '700',
-                    color: '#0F172A',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.3rem',
-                    cursor: 'pointer',
-                  }}
-                >
-                  {copiedCode === color.code ? (
-                    <>
-                      <Check size={14} color="#16A34A" />
-                      <span>Kopyalandı</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy size={14} />
-                      <span>Kodu Kopyala</span>
-                    </>
-                  )}
-                </button>
+                <img
+                  src="/membran/new-mutfak-01.jpg"
+                  alt="Membran Mutfak Uygulaması"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(15,23,42,0.85) 0%, transparent 60%)',
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  padding: '1.25rem'
+                }}>
+                  <div>
+                    <span style={{ background: 'var(--brand-red)', color: '#FFF', fontSize: '0.75rem', fontWeight: '800', padding: '0.25rem 0.6rem', borderRadius: '4px', display: 'inline-block', marginBottom: '0.4rem' }}>
+                      MEMBRAN KOLEKSİYONU
+                    </span>
+                    <h3 style={{ color: '#FFFFFF', fontSize: '1.3rem', fontWeight: '900', margin: 0 }}>
+                      Mutfak Tasarımı ve Uygulaması
+                    </h3>
+                  </div>
+                </div>
               </div>
 
-              <div style={{ padding: '0.75rem 1rem', background: '#FFFFFF', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontWeight: '800', fontSize: '0.95rem', color: '#1E293B' }}>
-                  {color.code}
-                </span>
-                <MessageCircle size={18} color="var(--brand-red)" />
+              <div style={{ padding: '1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#FFFFFF' }}>
+                <div>
+                  <h4 style={{ margin: 0, color: '#0F172A', fontSize: '1rem', fontWeight: '800' }}>Özel Tasarım Membran Mutfak</h4>
+                  <p style={{ margin: '0.2rem 0 0 0', color: '#64748B', fontSize: '0.85rem' }}>İpeksi mat yüzey & neo-klasik kapak detayı</p>
+                </div>
+                <button
+                  onClick={() => handleWhatsAppInquiry('Membran Mutfak Tasarımı')}
+                  className="btn-whatsapp"
+                  style={{ padding: '0.6rem 1rem', fontSize: '0.85rem', whiteSpace: 'nowrap' }}
+                >
+                  <MessageCircle size={16} />
+                  <span>Teklif Al</span>
+                </button>
               </div>
             </div>
-          ))}
+
+            {/* Görsel 2: Kapak Modeli */}
+            <div
+              style={{
+                background: 'var(--card-bg)',
+                borderRadius: '12px',
+                border: '1px solid var(--border-gold)',
+                boxShadow: '0 12px 35px rgba(0,0,0,0.3)',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div
+                onClick={() => setPreviewImage('/membran/new-kapak-01.jpg')}
+                style={{
+                  position: 'relative',
+                  height: '380px',
+                  cursor: 'pointer',
+                  overflow: 'hidden',
+                  background: '#F8FAFC',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderBottom: '1px solid #E2E8F0'
+                }}
+                className="gallery-card-hover"
+              >
+                <img
+                  src="/membran/new-kapak-01.jpg"
+                  alt="Membran Kapak Modeli"
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '1rem', transition: 'transform 0.4s ease' }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  bottom: '1rem',
+                  left: '1rem',
+                  right: '1rem',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                  pointerEvents: 'none'
+                }}>
+                  <span style={{ background: '#0F172A', color: 'var(--accent-gold)', fontSize: '0.75rem', fontWeight: '800', padding: '0.35rem 0.75rem', borderRadius: '20px', boxShadow: '0 4px 10px rgba(0,0,0,0.2)' }}>
+                    Profil Modeli
+                  </span>
+                </div>
+              </div>
+
+              <div style={{ padding: '1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#FFFFFF' }}>
+                <div>
+                  <h4 style={{ margin: 0, color: '#0F172A', fontSize: '1rem', fontWeight: '800' }}>Kasetli Membran Kapak Modeli</h4>
+                  <p style={{ margin: '0.2rem 0 0 0', color: '#64748B', fontSize: '0.85rem' }}>Eksiz kenar kaplama & E1 MDF kalitesi</p>
+                </div>
+                <button
+                  onClick={() => handleWhatsAppInquiry('Membran Kapak Modeli')}
+                  className="btn-whatsapp"
+                  style={{ padding: '0.6rem 1rem', fontSize: '0.85rem', whiteSpace: 'nowrap' }}
+                >
+                  <MessageCircle size={16} />
+                  <span>Teklif Al</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Görsel 3: Camlı Seri Kataloğu (C31, C32) */}
+            <div
+              style={{
+                background: 'var(--card-bg)',
+                borderRadius: '12px',
+                border: '1px solid var(--border-gold)',
+                boxShadow: '0 12px 35px rgba(0,0,0,0.3)',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div
+                onClick={() => setPreviewImage('/membran/camli-seri-c31-c32.jpg')}
+                style={{
+                  position: 'relative',
+                  height: '380px',
+                  cursor: 'pointer',
+                  overflow: 'hidden',
+                  background: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderBottom: '1px solid #E2E8F0'
+                }}
+                className="gallery-card-hover"
+              >
+                <img
+                  src="/membran/camli-seri-c31-c32.jpg"
+                  alt="Camlı Seri Membran Kapaklar C31 C32"
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '0.5rem', transition: 'transform 0.4s ease' }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  bottom: '1rem',
+                  left: '1rem',
+                  right: '1rem',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                  pointerEvents: 'none'
+                }}>
+                  <span style={{ background: '#0F172A', color: 'var(--accent-gold)', fontSize: '0.75rem', fontWeight: '800', padding: '0.35rem 0.75rem', borderRadius: '20px', boxShadow: '0 4px 10px rgba(0,0,0,0.2)' }}>
+                    Camlı Seri Kataloğu
+                  </span>
+                </div>
+              </div>
+
+              <div style={{ padding: '1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#FFFFFF' }}>
+                <div>
+                  <h4 style={{ margin: 0, color: '#0F172A', fontSize: '1rem', fontWeight: '800' }}>Camlı Seri (C31 - C32 Modelleri)</h4>
+                  <p style={{ margin: '0.2rem 0 0 0', color: '#64748B', fontSize: '0.85rem' }}>C31 (Tek / 8 Göz), C32 (Tek / 8 Göz) Çıtalı Vitrin Kapakları</p>
+                </div>
+                <button
+                  onClick={() => handleWhatsAppInquiry('Camlı Seri C31 C32 Kapak Modelleri')}
+                  className="btn-whatsapp"
+                  style={{ padding: '0.6rem 1rem', fontSize: '0.85rem', whiteSpace: 'nowrap' }}
+                >
+                  <MessageCircle size={16} />
+                  <span>Teklif Al</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : (
+        /* OTHER CATEGORIES: Color Swatches Grid */
+        <section style={{ maxWidth: '1320px', margin: '3rem auto 5rem auto', padding: '0 1.5rem' }}>
+          {/* Slatted Texture Banner / Sunta Banner above Color Palettes */}
+          <div style={{ borderRadius: '12px', overflow: 'hidden', marginBottom: '2.5rem', boxShadow: '0 10px 30px rgba(0,0,0,0.4)', border: '1px solid var(--border-gold)', height: '240px', background: slug === 'sunta' ? '#FFFFFF' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <img
+              src={slug === 'sunta' ? '/sunta-banner.png' : '/renk-paleti-banner.png'}
+              alt={slug === 'sunta' ? 'Sunta Levha Görseli' : 'Çıtalı Panel Doku Banner'}
+              style={{ width: '100%', height: '100%', objectFit: slug === 'sunta' ? 'contain' : 'cover', objectPosition: 'center center', padding: slug === 'sunta' ? '1rem' : '0' }}
+            />
+          </div>
+
+          <div style={{ marginBottom: '2.5rem', borderLeft: '4px solid var(--brand-red)', paddingLeft: '1.25rem' }}>
+            <span style={{ color: 'var(--brand-red)', fontWeight: '800', fontSize: '0.85rem', letterSpacing: '2.5px', textTransform: 'uppercase', display: 'block', marginBottom: '0.3rem' }}>
+              YAPAR ORMAN RENK KARTELASI
+            </span>
+            <h2 style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: '2.2rem',
+              fontWeight: '900',
+              color: 'var(--accent-gold)',
+              margin: 0,
+              letterSpacing: '-0.5px'
+            }}>
+              {slug === 'akustik' ? 'Akustik Panel Renk Kartelası' : slug === 'sunta' ? 'Stoklu Sunta & Suntalam Renk Kartelası' : 'Stoklu Renk Kartelası'}
+            </h2>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+              gap: '1.5rem',
+            }}
+          >
+            {(slug === 'sunta' ? suntaColors : akustikColors).map((color) => (
+              <div
+                key={color.code}
+                onClick={() => handleWhatsAppInquiry(color.code)}
+                style={{
+                  background: '#FFFFFF',
+                  borderRadius: '6px',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.15)',
+                  border: '1px solid var(--border-dark)',
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                }}
+                className="color-swatch-box"
+              >
+                <div
+                  style={{
+                    height: '180px',
+                    backgroundColor: color.hex,
+                    borderBottom: '1px solid #E2E8F0',
+                    position: 'relative',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    justifyContent: 'flex-end',
+                    padding: '0.65rem',
+                  }}
+                >
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleCopy(color.code);
+                    }}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.88)',
+                      backdropFilter: 'blur(4px)',
+                      border: '1px solid #CBD5E1',
+                      borderRadius: '4px',
+                      padding: '0.35rem 0.55rem',
+                      fontSize: '0.725rem',
+                      fontWeight: '700',
+                      color: '#0F172A',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.3rem',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {copiedCode === color.code ? (
+                      <>
+                        <Check size={14} color="#16A34A" />
+                        <span>Kopyalandı</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy size={14} />
+                        <span>Kodu Kopyala</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                <div style={{ padding: '0.75rem 1rem', background: '#FFFFFF', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontWeight: '800', fontSize: '0.95rem', color: '#1E293B' }}>
+                    {color.code}
+                  </span>
+                  <MessageCircle size={18} color="var(--brand-red)" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* FULLSCREEN IMAGE LIGHTBOX MODAL */}
+      {previewImage && (
+        <div
+          onClick={() => setPreviewImage(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 9999,
+            background: 'rgba(5, 10, 20, 0.92)',
+            backdropFilter: 'blur(10px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1.5rem',
+            animation: 'fadeIn 0.25s ease'
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'relative',
+              maxWidth: '1200px',
+              maxHeight: '90vh',
+              background: '#0B132B',
+              borderRadius: '16px',
+              border: '1px solid var(--border-gold)',
+              boxShadow: '0 25px 60px rgba(0,0,0,0.8)',
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+          >
+            {/* Modal Header */}
+            <div style={{
+              width: '100%',
+              padding: '1rem 1.5rem',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              borderBottom: '1px solid rgba(255,255,255,0.1)',
+              background: 'rgba(15, 23, 42, 0.95)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span style={{ color: 'var(--accent-gold)', fontWeight: '800', fontSize: '0.95rem' }}>
+                  Berceste Serisi Yüksek Çözünürlüklü Katalog Görseli
+                </span>
+              </div>
+              <button
+                onClick={() => setPreviewImage(null)}
+                style={{
+                  background: 'rgba(255,255,255,0.1)',
+                  border: 'none',
+                  color: '#FFFFFF',
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s'
+                }}
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Modal Image Box */}
+            <div style={{
+              width: '100%',
+              padding: '1rem',
+              maxHeight: 'calc(90vh - 140px)',
+              overflow: 'auto',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: '#FFFFFF'
+            }}>
+              <img
+                src={previewImage}
+                alt="Önizleme"
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '75vh',
+                  objectFit: 'contain',
+                  borderRadius: '8px'
+                }}
+              />
+            </div>
+
+            {/* Modal Footer Actions */}
+            <div style={{
+              width: '100%',
+              padding: '0.85rem 1.5rem',
+              background: '#0F172A',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              borderTop: '1px solid rgba(255,255,255,0.1)'
+            }}>
+              <span style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+                Yapar Orman Ürünleri • Mutfak & Banyo Membran Kapak Sistemleri
+              </span>
+              <button
+                onClick={() => handleWhatsAppInquiry('Berceste Serisi Katalog Modeli')}
+                className="btn-whatsapp"
+                style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem' }}
+              >
+                <MessageCircle size={16} />
+                <span>Bu Model İçin Fiyat Al</span>
+              </button>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
     </div>
   );
 }

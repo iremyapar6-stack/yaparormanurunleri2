@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
-import { Search } from 'lucide-react';
 
 export default function ProductsPage() {
   const navigate = useNavigate();
@@ -9,9 +8,6 @@ export default function ProductsPage() {
     categories,
     filteredProducts,
     selectedCategory,
-    setSelectedCategory,
-    searchQuery,
-    setSearchQuery,
   } = useProducts();
 
   const handleProductClick = (categorySlug) => {
@@ -23,41 +19,6 @@ export default function ProductsPage() {
       <section className="page-header">
         <h1>Tüm Ürün Koleksiyonumuz</h1>
         <p>Membran, Akustik, Sunta, MDF, Lambri, Arkalık ve Panel Ürün Kataloğumuz</p>
-      </section>
-
-      <section className="filter-section">
-        <div className="filter-box">
-          <div className="search-input-wrapper">
-            <Search className="search-icon-inside" size={20} />
-            <input
-              type="text"
-              placeholder="Membran, Akustik, Sunta, MDF, Lambri, Arkalık veya Panel arayın..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
-
-          <div className="category-tabs">
-            {categories.map((cat) => {
-              const isActive = selectedCategory === cat.id;
-
-              return (
-                <button
-                  key={cat.id}
-                  className={`tab-btn ${isActive ? 'active' : ''}`}
-                  onClick={() => {
-                    setSelectedCategory(cat.id);
-                    if (cat.id !== 'all') {
-                      navigate(`/kategori/${cat.id}`);
-                    }
-                  }}
-                >
-                  <span>{cat.name}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
       </section>
 
       <main className="catalog-container">

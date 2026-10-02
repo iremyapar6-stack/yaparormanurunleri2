@@ -1,84 +1,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 /* ==========================================================================
-   LUXURY DARK ANTHRACITE DESIGN TOKENS - YAPAR ORMAN
+   PALET 2: ENDÜSTRİYEL & ŞIK MİMARİ STÜDYO - DESIGN TOKENS
    ========================================================================== */
 :root {
-  /* Dark Anthracite Palette */
-  --bg-dark: #0B1120;
-  --bg-surface: #111827;
-  --card-bg: #1E293B;
-  --card-bg-hover: #26334D;
+  /* Zemin Renkleri */
+  --bg-dark: #24282C;           /* Hero & Banner Zemin Rengi (Arduvaz Antrasit) */
+  --bg-hero: #24282C;           /* Hero & Banner Zemin Rengi */
+  --bg-page: #F4F5F6;           /* Genel Sayfa Zemini (Hafif Taş Grisi) */
+  --bg-surface: #FFFFFF;        /* Kart & Yüzey Zemini */
+  --card-bg: #FFFFFF;
+  --card-bg-hover: #EAECEE;
 
-  /* Official Yapar Orman Logo Palette (Brand Red, Forest Green, Rich Wood) */
-  --brand-red: #E52E2E;
-  --brand-red-hover: #C52222;
-  --brand-red-glow: rgba(229, 46, 46, 0.3);
+  /* Ana Vurgu Rengi: Sıcak Hardal / Eskitme Pirinç */
+  --brand-red: #C59B27;
+  --brand-red-hover: #B8860B;
+  --brand-red-glow: rgba(197, 155, 39, 0.3);
 
-  --brand-green: #22C55E;
-  --brand-green-hover: #16A34A;
-  --brand-green-glow: rgba(34, 197, 94, 0.3);
+  /* İkincil / Tamamlayıcı Vurgu: Derin Petrol */
+  --brand-green: #2F4858;
+  --brand-green-hover: #1E3340;
+  --brand-green-glow: rgba(47, 72, 88, 0.3);
 
-  --primary-walnut: #2C1810;
-  --primary-oak: #15803D;
-  --accent-gold: #E52E2E; /* Primary Brand Red for Highlights */
-  --accent-green: #22C55E;
-  --accent-brass: #E52E2E;
-  --accent-brass-hover: #B91C1C;
-  --accent-brass-glow: rgba(229, 46, 46, 0.3);
+  --primary-walnut: #24282C;
+  --primary-oak: #C59B27;
+  --accent-gold: #C59B27;        /* Sıcak Hardal / Eskitme Pirinç */
+  --accent-brass: #C59B27;
+  --accent-brass-hover: #B8860B;
+  --accent-brass-glow: rgba(197, 155, 39, 0.3);
+  
+  --accent-petrol: #2F4858;       /* Derin Petrol (Butonlar & Hover) */
+  --accent-petrol-hover: #1E3340;
+  --accent-green: #2F4858;
 
-  /* Neutrals & Text */
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  --border-dark: rgba(255, 255, 255, 0.1);
-  --border-gold: rgba(229, 46, 46, 0.4);
-  --border-red: rgba(229, 46, 46, 0.4);
-  --border-green: rgba(34, 197, 94, 0.4);
+  /* Metinler: Koyu Grafit */
+  --text-primary: #1C2024;
+  --text-secondary: #4A525A;
+  --text-muted: #707A84;
 
-  /* Radius & Shadows */
+  /* Kenarlıklar & Gölgeler */
+  --border-dark: rgba(28, 32, 36, 0.12);
+  --border-gold: rgba(197, 155, 39, 0.4);
+  --border-red: rgba(197, 155, 39, 0.4);
+  --border-green: rgba(47, 72, 88, 0.4);
+
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
-  --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.5);
-  --shadow-gold: 0 10px 30px rgba(229, 46, 46, 0.3);
-  --shadow-red: 0 10px 30px rgba(229, 46, 46, 0.35);
+  --shadow-dark: 0 10px 30px rgba(28, 32, 36, 0.08);
+  --shadow-gold: 0 10px 30px rgba(197, 155, 39, 0.25);
+  --shadow-red: 0 10px 30px rgba(197, 155, 39, 0.25);
 
-  /* Fonts */
+  /* Fontlar */
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* ==========================================================================
-   LIGHT THEME OVERRIDES
+   LIGHT THEME OVERRIDES (Palet 2 ile Uyumlu)
    ========================================================================== */
 [data-theme="light"] {
-  --bg-dark: #F8FAFC;
+  --bg-dark: #24282C;
+  --bg-page: #F4F5F6;
   --bg-surface: #FFFFFF;
-  --card-bg: #F1F5F9;
-  --card-bg-hover: #E2E8F0;
+  --card-bg: #FFFFFF;
+  --card-bg-hover: #EAECEE;
 
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #64748B;
-  --border-dark: rgba(15, 23, 42, 0.12);
-  --border-gold: rgba(229, 46, 46, 0.35);
+  --text-primary: #1C2024;
+  --text-secondary: #4A525A;
+  --text-muted: #707A84;
+  --border-dark: rgba(28, 32, 36, 0.12);
+  --border-gold: rgba(197, 155, 39, 0.35);
 
-  --shadow-dark: 0 10px 25px rgba(0, 0, 0, 0.07);
+  --shadow-dark: 0 4px 20px rgba(28, 32, 36, 0.06);
 }
 
 [data-theme="light"] .header {
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(249, 248, 246, 0.94);
+  border-bottom: 1px solid rgba(30, 30, 30, 0.1);
 }
 
 [data-theme="light"] .nav-link {
-  color: #334155;
+  color: #5E5852;
 }
 
 [data-theme="light"] .nav-link:hover,
 [data-theme="light"] .nav-link.active {
-  color: #0F172A;
+  color: #1E1E1E;
 }
 
 [data-theme="light"] .section-title-large,
@@ -90,11 +98,11 @@
 [data-theme="light"] .home-contact-info-col h2,
 [data-theme="light"] .modal-header-info h2,
 [data-theme="light"] .section-title {
-  color: #0F172A;
+  color: #1E1E1E;
 }
 
 [data-theme="light"] .brand-orman-white {
-  color: #0F172A;
+  color: #1E1E1E;
 }
 
 [data-theme="light"] .cat-card-specs-preview,
@@ -102,21 +110,21 @@
 [data-theme="light"] .info-card-item,
 [data-theme="light"] .search-input-wrapper input {
   background: #FFFFFF;
-  border-color: rgba(15, 23, 42, 0.12);
-  color: #0F172A;
+  border-color: rgba(30, 30, 30, 0.12);
+  color: #1E1E1E;
 }
 
 [data-theme="light"] .btn-detail,
 [data-theme="light"] .btn-phone-call,
 [data-theme="light"] .btn-cat-action {
   background: #FFFFFF;
-  color: #0F172A;
-  border-color: rgba(15, 23, 42, 0.18);
+  color: #1E1E1E;
+  border-color: rgba(30, 30, 30, 0.18);
 }
 
 [data-theme="light"] .site-footer {
-  background-color: #0F172A;
-  color: #94A3B8;
+  background-color: #181816;
+  color: #D1CBC4;
 }
 
 .theme-toggle-btn {
@@ -150,7 +158,7 @@ html, body {
 }
 
 body {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-page);
   color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -164,6 +172,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: var(--bg-page);
 }
 
 .main-content {
@@ -174,11 +183,11 @@ body {
    TOP BAR & STICKY NAVBAR
    ========================================================================== */
 .top-bar {
-  background-color: #070C18;
-  color: var(--text-secondary);
+  background-color: var(--bg-dark);
+  color: #EAECEE;
   font-size: 0.825rem;
   padding: 0.55rem 0;
-  border-bottom: 1px solid var(--border-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .top-bar-inner {
@@ -203,7 +212,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: var(--text-secondary);
+  color: #EAECEE;
   text-decoration: none;
   font-size: 0.825rem;
   transition: color 0.2s ease;
@@ -216,10 +225,10 @@ body {
 .top-item.highlight-contact {
   color: #FFFFFF;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
-  border: 1px solid var(--border-dark);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .top-item.highlight-whatsapp {
@@ -250,14 +259,14 @@ body {
 
 /* NAVBAR */
 .header {
-  background: rgba(17, 24, 39, 0.85);
+  background: rgba(36, 40, 44, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .header-container {
@@ -423,7 +432,7 @@ body {
    BUTTON UTILITIES
    ========================================================================== */
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-brass), var(--accent-brass-hover));
+  background: var(--accent-petrol, #2F4858);
   color: #FFFFFF;
   padding: 0.85rem 1.6rem;
   border-radius: var(--radius-sm);
@@ -433,36 +442,40 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border: 1px solid var(--accent-gold);
+  border: 1px solid var(--accent-petrol, #2F4858);
   transition: all 0.25s ease;
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 4px 14px rgba(47, 72, 88, 0.35);
   cursor: pointer;
 }
 
 .btn-primary:hover {
+  background: var(--accent-petrol-hover, #1E3340);
+  border-color: var(--accent-gold, #C59B27);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.45);
+  box-shadow: 0 8px 24px rgba(47, 72, 88, 0.5);
 }
 
 .btn-secondary {
-  background: rgba(30, 41, 59, 0.85);
-  backdrop-filter: blur(8px);
-  color: #FFFFFF;
+  background: var(--accent-gold, #C59B27);
+  color: #1C2024;
   padding: 0.85rem 1.6rem;
   border-radius: var(--radius-sm);
   text-decoration: none;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 800;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border: 1px solid var(--border-dark);
+  border: 1px solid var(--accent-gold, #C59B27);
   transition: all 0.25s ease;
+  box-shadow: var(--shadow-gold);
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent-gold);
-  background: var(--card-bg-hover);
+  background: var(--brand-red-hover, #B8860B);
+  border-color: var(--brand-red-hover, #B8860B);
+  color: #FFFFFF;
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -520,9 +533,9 @@ body {
   height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(11, 17, 32, 0.96) 0%,
-    rgba(11, 17, 32, 0.78) 55%,
-    rgba(11, 17, 32, 0.45) 100%
+    rgba(36, 40, 44, 0.96) 0%,
+    rgba(36, 40, 44, 0.78) 55%,
+    rgba(36, 40, 44, 0.45) 100%
   );
 }
 
@@ -2057,7 +2070,7 @@ body {
 /* PAGE HEADER UTILITY */
 .page-header {
   background: linear-gradient(rgba(11, 17, 32, 0.92), rgba(11, 17, 32, 0.95)),
-              url('https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1600&q=80');
+              url('/lambri-kaplama.png');
   background-size: cover;
   background-position: center;
   color: #FFFFFF;
