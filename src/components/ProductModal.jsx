@@ -46,7 +46,7 @@ export default function ProductModal({ product, onClose }) {
                 </button>
                 <button onClick={handleWhatsApp} className="btn-whatsapp-direct">
                   <MessageCircle size={17} />
-                  <span>WhatsApp Teklif Al</span>
+                  <span>WhatsApp</span>
                 </button>
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function ProductModal({ product, onClose }) {
 
               <button onClick={handleWhatsApp} className="btn-whatsapp-action">
                 <MessageCircle size={18} />
-                <span>WhatsApp Teklif Al</span>
+                <span>WhatsApp</span>
               </button>
 
               {product.pdfUrl && (

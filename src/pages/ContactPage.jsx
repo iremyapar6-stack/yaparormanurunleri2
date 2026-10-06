@@ -29,7 +29,7 @@ export default function ContactPage() {
         {/* Quick Hotline Bar */}
         <div className="contact-hotline-banner">
           <div className="hotline-item">
-            <Phone size={28} color="var(--accent-gold)" />
+            <Phone size={28} color="#b45309" />
             <div>
               <span className="hotline-label">TELEFON İLETİŞİM HATTI</span>
               <a href={`tel:${phoneNumber}`} className="hotline-val">{phoneDisplay}</a>
@@ -39,9 +39,9 @@ export default function ContactPage() {
           <div className="hotline-divider"></div>
 
           <div className="hotline-item">
-            <MessageCircle size={28} color="#22C55E" />
+            <MessageCircle size={28} color="#25D366" />
             <div>
-              <span className="hotline-label">WHATSAPP İLETİŞİM HATTI</span>
+              <span className="hotline-label" style={{ color: '#16A34A' }}>WHATSAPP İLETİŞİM HATTI</span>
               <a
                 href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Merhaba Yapar Orman Ürünleri, fiyat teklifi ve katalog rica ediyorum.')}`}
                 target="_blank"
@@ -56,53 +56,53 @@ export default function ContactPage() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '3rem' }}>
           {/* Contact Info */}
-          <div style={{ background: '#FFFFFF', padding: '2.5rem', borderRadius: 'var(--radius-lg)', border: '2px solid var(--accent-gold)', boxShadow: '0 15px 35px rgba(0,0,0,0.25)' }}>
-            <span style={{ color: 'var(--brand-red)', fontWeight: '800', fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+          <div style={{ background: 'var(--bg-surface)', padding: '2.5rem', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border-gold)', boxShadow: 'var(--shadow-dark)' }}>
+            <span style={{ color: '#b45309', fontWeight: '800', fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
               KURUMSAL İLETİŞİM
             </span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', color: '#000000', marginTop: '0.3rem', marginBottom: '1.5rem', fontSize: '2.2rem', fontWeight: '900' }}>
+            <h2 style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', marginTop: '0.3rem', marginBottom: '1.5rem', fontSize: '2.2rem', fontWeight: '900' }}>
               Bize Ulaşın
             </h2>
-            <p style={{ color: '#334155', marginBottom: '2.5rem', fontSize: '1rem', lineHeight: '1.75', fontWeight: '500' }}>
-              Yapar Orman Ürünleri uzman ekibimiz lambri, akustik keçe panel, MDF ve  membran ihtiyaçlarınızda sizlere en hızlı çözümü ve fiyat teklifini sunmaktadır.
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '2.5rem', fontSize: '1rem', lineHeight: '1.75', fontWeight: '500' }}>
+              Yapar Orman Ürünleri uzman ekibimiz lambri, akustik keçe panel, MDF ve membran ihtiyaçlarınızda sizlere en hızlı çözümü ve fiyat teklifini sunmaktadır.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
               <div style={{ display: 'flex', gap: '1.2rem', alignItems: 'flex-start' }}>
-                <div style={{ background: '#F8FAFC', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #CBD5E1' }}>
-                  <MapPin color="var(--brand-red)" size={26} />
+                <div style={{ background: 'rgba(180, 83, 9, 0.12)', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-gold)' }}>
+                  <MapPin color="#b45309" size={26} />
                 </div>
                 <div>
-                  <h4 style={{ color: '#000000', fontWeight: '900', fontSize: '1.1rem' }}>Dükkan Adresi</h4>
-                  <p style={{ color: '#334155', fontSize: '0.95rem', marginTop: '0.2rem', fontWeight: '600' }}>
+                  <h4 style={{ color: 'var(--text-primary)', fontWeight: '900', fontSize: '1.1rem' }}>Dükkan Adresi</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginTop: '0.2rem', fontWeight: '600' }}>
                     Camikebir Mah. 5062. Cd. 1. Blok No: 3, Kocasinan / Kayseri
                   </p>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '1.2rem', alignItems: 'flex-start' }}>
-                <div style={{ background: '#F8FAFC', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #CBD5E1' }}>
-                  <Phone color="var(--brand-red)" size={26} />
+                <div style={{ background: 'rgba(180, 83, 9, 0.12)', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-gold)' }}>
+                  <Phone color="#b45309" size={26} />
                 </div>
                 <div>
-                  <h4 style={{ color: '#000000', fontWeight: '900', fontSize: '1.1rem' }}>Telefon / WhatsApp İletişim </h4>
-                  <p style={{ color: '#334155', fontSize: '0.95rem', marginTop: '0.2rem', fontWeight: '600' }}>
-                    Sabit Hat: <a href={`tel:${phoneNumber}`} style={{ color: 'var(--brand-red)', textDecoration: 'none', fontWeight: '700' }}>{phoneDisplay}</a>
+                  <h4 style={{ color: 'var(--text-primary)', fontWeight: '900', fontSize: '1.1rem' }}>Telefon / WhatsApp İletişim</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginTop: '0.2rem', fontWeight: '600' }}>
+                    Sabit Hat: <a href={`tel:${phoneNumber}`} style={{ color: 'var(--text-primary)', textDecoration: 'none', fontWeight: '900' }}>{phoneDisplay}</a>
                   </p>
-                  <p style={{ color: '#334155', fontSize: '0.95rem', fontWeight: '600' }}>
-                    WhatsApp Hat: <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" style={{ color: '#16A34A', textDecoration: 'none', fontWeight: '700' }}>{whatsappDisplay}</a>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontWeight: '600', marginTop: '0.2rem' }}>
+                    WhatsApp Hat: <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" style={{ color: '#16A34A', textDecoration: 'none', fontWeight: '900' }}>{whatsappDisplay}</a>
                   </p>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '1.2rem', alignItems: 'flex-start' }}>
-                <div style={{ background: '#F8FAFC', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #CBD5E1' }}>
-                  <Mail color="var(--brand-red)" size={26} />
+                <div style={{ background: 'rgba(180, 83, 9, 0.12)', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-gold)' }}>
+                  <Mail color="#b45309" size={26} />
                 </div>
                 <div>
-                  <h4 style={{ color: '#000000', fontWeight: '900', fontSize: '1.1rem' }}>E-Posta</h4>
-                  <p style={{ color: '#334155', fontSize: '0.95rem', marginTop: '0.2rem', fontWeight: '600' }}>
-                    <a href="mailto:hasan.yapar@yaparorman.com" style={{ color: 'var(--brand-red)', textDecoration: 'none', fontWeight: '700' }}>
+                  <h4 style={{ color: 'var(--text-primary)', fontWeight: '900', fontSize: '1.1rem' }}>E-Posta</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginTop: '0.2rem', fontWeight: '600' }}>
+                    <a href="mailto:hasan.yapar@yaparorman.com" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontWeight: '800' }}>
                       hasan.yapar@yaparorman.com
                     </a>
                   </p>
@@ -110,31 +110,31 @@ export default function ContactPage() {
               </div>
 
               <div style={{ display: 'flex', gap: '1.2rem', alignItems: 'flex-start' }}>
-                <div style={{ background: '#F8FAFC', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #CBD5E1' }}>
-                  <Clock color="var(--brand-red)" size={26} />
+                <div style={{ background: 'rgba(180, 83, 9, 0.12)', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-gold)' }}>
+                  <Clock color="#b45309" size={26} />
                 </div>
                 <div>
-                  <h4 style={{ color: '#000000', fontWeight: '900', fontSize: '1.1rem' }}>Mesai Saatleri</h4>
-                  <p style={{ color: '#334155', fontSize: '0.95rem', marginTop: '0.2rem', fontWeight: '600' }}>Hafta İçi : 08:00 - 18:00</p>
-                  <p style={{ color: '#334155', fontSize: '0.95rem', fontWeight: '600' }}>Cumartesi : 08:00 - 15:00</p>
-                  <p style={{ color: '#334155', fontSize: '0.95rem', fontWeight: '600' }}>Pazar: Kapalı</p>
+                  <h4 style={{ color: 'var(--text-primary)', fontWeight: '900', fontSize: '1.1rem' }}>Mesai Saatleri</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginTop: '0.2rem', fontWeight: '600' }}>Hafta İçi : 08:00 - 18:00</p>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontWeight: '600' }}>Cumartesi : 08:00 - 15:00</p>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', fontWeight: '600' }}>Pazar: Kapalı</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Form */}
-          <div style={{ background: 'var(--bg-surface)', padding: '2.5rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-dark)', boxShadow: 'var(--shadow-dark)' }}>
-            <h3 style={{ fontFamily: 'var(--font-heading)', color: '#FFFFFF', marginBottom: '0.5rem', fontSize: '1.5rem', fontWeight: '900' }}>
+          <div style={{ background: 'var(--bg-surface)', padding: '2.5rem', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border-gold)', boxShadow: 'var(--shadow-dark)' }}>
+            <h3 style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', marginBottom: '0.5rem', fontSize: '1.6rem', fontWeight: '900' }}>
               Teklif & Metraj Bilgi Formu
             </h3>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.925rem', marginBottom: '1.75rem', lineHeight: '1.6' }}>
               Projeniz için ihtiyacınız olan ürün grubu, renk kodu ve metrajı iletin; ekibimiz size özel teklif hazırlasın.
             </p>
 
             <form onSubmit={handleFormSubmit}>
-              <div style={{ marginBottom: '1.2rem' }}>
-                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '800', marginBottom: '0.5rem', color: '#FFFFFF' }}>
+              <div style={{ marginBottom: '1.25rem' }}>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '800', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
                   Adınız Soyadınız / Firma Unvanı
                 </label>
                 <input
@@ -143,12 +143,12 @@ export default function ContactPage() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="Örn: Ahmet Yılmaz - Yılmaz Mimarlık"
-                  style={{ width: '100%', padding: '0.9rem', border: '1px solid var(--border-dark)', borderRadius: 'var(--radius-sm)', fontSize: '0.95rem', background: 'var(--bg-dark)', color: '#FFFFFF' }}
+                  style={{ width: '100%', padding: '0.9rem', border: '1.5px solid var(--border-dark)', borderRadius: 'var(--radius-sm)', fontSize: '0.95rem', background: 'var(--card-bg)', color: 'var(--text-primary)', fontWeight: '600' }}
                 />
               </div>
 
-              <div style={{ marginBottom: '1.2rem' }}>
-                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '800', marginBottom: '0.5rem', color: '#FFFFFF' }}>
+              <div style={{ marginBottom: '1.25rem' }}>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '800', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
                   Telefon Numarası
                 </label>
                 <input
@@ -157,30 +157,30 @@ export default function ContactPage() {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="05XX XXX XX XX"
-                  style={{ width: '100%', padding: '0.9rem', border: '1px solid var(--border-dark)', borderRadius: 'var(--radius-sm)', fontSize: '0.95rem', background: 'var(--bg-dark)', color: '#FFFFFF' }}
+                  style={{ width: '100%', padding: '0.9rem', border: '1.5px solid var(--border-dark)', borderRadius: 'var(--radius-sm)', fontSize: '0.95rem', background: 'var(--card-bg)', color: 'var(--text-primary)', fontWeight: '600' }}
                 />
               </div>
 
-              <div style={{ marginBottom: '1.2rem' }}>
-                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '800', marginBottom: '0.5rem', color: '#FFFFFF' }}>
+              <div style={{ marginBottom: '1.25rem' }}>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '800', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
                   Ürün Grubu Seçimi
                 </label>
                 <select
                   value={productGroup}
                   onChange={(e) => setProductGroup(e.target.value)}
-                  style={{ width: '100%', padding: '0.9rem', border: '1px solid var(--border-gold)', borderRadius: 'var(--radius-sm)', fontSize: '0.95rem', background: '#FFFFFF', color: '#334155', fontWeight: '700' }}
+                  style={{ width: '100%', padding: '0.9rem', border: '1.5px solid var(--border-dark)', borderRadius: 'var(--radius-sm)', fontSize: '0.95rem', background: 'var(--card-bg)', color: 'var(--text-primary)', fontWeight: '700' }}
                 >
-                  <option value="Lambri " style={{ color: '#334155', background: '#FFFFFF', fontWeight: '700' }}>Lambri </option>
-                  <option value="Akustik" style={{ color: '#334155', background: '#FFFFFF', fontWeight: '700' }}>Akustik </option>
-                  <option value="MDF " style={{ color: '#334155', background: '#FFFFFF', fontWeight: '700' }}>MDF </option>
-                  <option value="Membran" style={{ color: '#334155', background: '#FFFFFF', fontWeight: '700' }}>Membran </option>
-                  <option value="Sunta" style={{ color: '#334155', background: '#FFFFFF', fontWeight: '700' }}>Sunta </option>
-                  <option value="Diğer " style={{ color: '#334155', background: '#FFFFFF', fontWeight: '700' }}>Diğer </option>
+                  <option value="Lambri">Lambri</option>
+                  <option value="Akustik">Akustik Panel</option>
+                  <option value="MDF">MDF Levha</option>
+                  <option value="Membran">Membran Kapak</option>
+                  <option value="Sunta">Sunta</option>
+                  <option value="Diğer">Diğer</option>
                 </select>
               </div>
 
               <div style={{ marginBottom: '1.75rem' }}>
-                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '800', marginBottom: '0.5rem', color: '#FFFFFF' }}>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '800', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
                   Metraj & Proje Notlarınız
                 </label>
                 <textarea
@@ -189,17 +189,17 @@ export default function ContactPage() {
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="Örn: 150 m² Doğal Meşe Akustik Panel ve 80 m² Çam Lambiri için fiyat bilgisi almak istiyorum..."
-                  style={{ width: '100%', padding: '0.9rem', border: '1px solid var(--border-dark)', borderRadius: 'var(--radius-sm)', fontSize: '0.95rem', fontFamily: 'var(--font-body)', background: 'var(--bg-dark)', color: '#FFFFFF' }}
+                  style={{ width: '100%', padding: '0.9rem', border: '1.5px solid var(--border-dark)', borderRadius: 'var(--radius-sm)', fontSize: '0.95rem', fontFamily: 'var(--font-body)', background: 'var(--card-bg)', color: 'var(--text-primary)', fontWeight: '600' }}
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 className="btn-whatsapp"
-                style={{ width: '100%', justifyContent: 'center', cursor: 'pointer', padding: '1rem', fontSize: '1.05rem', fontWeight: '800' }}
+                style={{ width: '100%', justifyContent: 'center', cursor: 'pointer', padding: '1rem', fontSize: '1.05rem', fontWeight: '800', background: '#16A34A', color: '#FFFFFF', border: 'none', borderRadius: 'var(--radius-sm)', boxShadow: '0 6px 18px rgba(22, 163, 74, 0.35)' }}
               >
                 <MessageCircle size={22} />
-                <span>Fiyat Bilgisi Al (WhatsApp)</span>
+                <span>WhatsApp</span>
               </button>
             </form>
           </div>

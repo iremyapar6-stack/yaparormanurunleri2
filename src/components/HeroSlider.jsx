@@ -7,16 +7,16 @@ const slides = [
     tag: 'KEÇELİ AKUSTİK PANEL',
     title: 'Estetik Çıtalar ve Yüksek Akustik Performans',
     subtitle: 'Siyah keçe zemin üzerine doğal meşe, ceviz ve antrasit kaplamalı ahşap çıtalar ile yankısız, lüks iç mekanlar.',
-    image: '/akustik-duvar-paneli.png',
+    image: '/hero-slide-1.jpg',
     primaryBtnText: 'Akustik Panelleri İnceleyin',
     catId: 'akustik',
   },
   {
     id: 2,
-    tag: 'FIRINLI AHŞAP LAMBRİ',
+    tag: 'AHŞAP LAMBRİ',
     title: 'Doğal Yerli Çam ve İskandinav Ladin Lambiri',
-    subtitle: 'Nem oranı %10-12 seviyesinde fırınlanmış, çatlama ve dönme yapmayan birinci sınıf duvar ve tavan ahşap kaplamaları.',
-    image: '/lambri-kaplama.png',
+    subtitle: 'Çatlama ve dönme yapmayan birinci sınıf duvar ve tavan ahşap kaplamaları.',
+    image: '/hero-slide-2.jpg',
     primaryBtnText: 'Lambiri Koleksiyonunu İnceleyin',
     catId: 'lambri',
   },
@@ -25,7 +25,7 @@ const slides = [
     tag: 'HAM & LAM MDF LEVHALAR',
     title: 'Yüksek Yoğunluklu MDF & Akustik Frezeli Levha',
     subtitle: 'E1 emisyon standartlarında, CNC işleme ve mobilya üretimine uygun homojen ham MDF ve melamin kaplı levhalar.',
-    image: '/mdf-levha.png',
+    image: '/hero-slide-3.jpg',
     primaryBtnText: 'MDF Çözümlerini İnceleyin',
     catId: 'mdf',
   },
@@ -34,7 +34,7 @@ const slides = [
     tag: 'BERCESTE SERİSİ & PVC MEMBRAN',
     title: 'Berceste Serisi 3D Vakum Membran Kapaklar',
     subtitle: 'Mutfak ve banyolara özel parmak izi tutmaz mat lake dokulu, CNC işlemeli lüks profil membran kapak modelleri.',
-    image: '/membran/berceste-ana-mutfak.png',
+    image: '/hero-slide-4.jpg',
     primaryBtnText: 'Membran Modellerini İnceleyin',
     catId: 'membran',
   },
@@ -98,7 +98,7 @@ export default function HeroSlider({ onSelectCategory }) {
                   rel="noopener noreferrer"
                   className="btn-secondary"
                 >
-                  <MessageCircle size={18} color="#22C55E" />
+                  <MessageCircle size={20} color="#16A34A" />
                   <span>WhatsApp Hızlı Teklif</span>
                 </a>
               </div>

@@ -1,8 +1,16 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('yapar_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="./public/Logo0.jpeg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YAPAR ORMAN ÜRÜNLERİ — Lambri, Akustik, MDF & PVC Membran</title>

@@ -1,55 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 /* ==========================================================================
-   YUMUŞAK KUM & BEJ (AÇIK VE SADE ALTERNATİF) - DESIGN TOKENS
+   TÜM ARKA YÜZ RENKLERİ: #FFFFF0 (FİLDİŞİ / KREM) - DESIGN TOKENS
    ========================================================================== */
-:root {
-  /* Zemin Renkleri */
-  --bg-dark: #24282C;           /* Hero & Banner Zemin Rengi (Arduvaz Antrasit) */
-  --bg-hero: #24282C;           /* Hero & Banner Zemin Rengi */
-  --bg-page: #F4F5F6;           /* Genel Sayfa Zemini (Hafif Taş Grisi) */
-  --bg-surface: #FFFFFF;        /* Kart & Yüzey Zemini */
-  --card-bg: #FFFFFF;
-  --card-bg-hover: #EAECEE;
+:root,
+[data-theme="dark"] {
+  /* Zemin Renkleri (Koyu Gece / Lüks Ahşap Konsepti) */
+  --bg-dark: #0B1120;
+  --bg-hero: #0B1120;
+  --bg-page: #0B1120;
+  --bg-surface: #111827;
+  --card-bg: #1E293B;
+  --card-bg-hover: #334155;
 
-  /* Yumuşak Kum & Bej (Açık ve Sade Accent) */
-  --brand-red: #D6C7A1;
-  --brand-red-hover: #E0D2B4;
-  --brand-red-glow: rgba(214, 199, 161, 0.3);
+  /* Accent & Ahşap Tonları */
+  --brand-red: #b45309;
+  --brand-red-hover: #d97706;
+  --brand-red-glow: rgba(180, 83, 9, 0.3);
 
-  /* İkincil / Tamamlayıcı Vurgu: Derin Petrol */
-  --brand-green: #2F4858;
-  --brand-green-hover: #1E3340;
-  --brand-green-glow: rgba(47, 72, 88, 0.3);
+  --brand-green: #22C55E;
+  --brand-green-hover: #16A34A;
+  --brand-green-glow: rgba(34, 197, 94, 0.3);
 
-  --primary-walnut: #24282C;
-  --primary-oak: #D6C7A1;
-  --accent-gold: #D6C7A1;        /* Yumuşak Kum / Bej Accent (#D6C7A1) */
-  --accent-brass: #D6C7A1;
-  --accent-brass-hover: #E0D2B4;  /* Bej Hover (#E0D2B4) */
-  --accent-brass-glow: rgba(214, 199, 161, 0.3);
-  
-  --accent-petrol: #2F4858;       /* Derin Petrol (Butonlar & Hover) */
-  --accent-petrol-hover: #1E3340;
-  --accent-green: #2F4858;
+  --primary-walnut: #0B1120;
+  --primary-oak: #b45309;
+  --accent-gold: #f59e0b;
+  --accent-brass: #b45309;
+  --accent-brass-hover: #d97706;
+  --accent-brass-glow: rgba(180, 83, 9, 0.3);
 
-  /* Metinler: #2C2C2C (Koyu Gri/Siyah) */
-  --text-primary: #2C2C2C;
-  --text-secondary: #4A525A;
-  --text-muted: #707A84;
+  --accent-petrol: #1E293B;
+  --accent-petrol-hover: #334155;
+  --accent-green: #22C55E;
+
+  /* Metinler (Karanlık Mod İçin Yüksek Kontrastlı Beyaz) */
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
 
   /* Kenarlıklar & Gölgeler */
-  --border-dark: rgba(44, 44, 44, 0.12);
-  --border-gold: rgba(214, 199, 161, 0.5);
-  --border-red: rgba(214, 199, 161, 0.5);
-  --border-green: rgba(47, 72, 88, 0.4);
+  --border-dark: rgba(255, 255, 255, 0.12);
+  --border-gold: rgba(245, 158, 11, 0.35);
+  --border-red: rgba(180, 83, 9, 0.5);
+  --border-green: rgba(34, 197, 94, 0.4);
 
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
-  --shadow-dark: 0 10px 30px rgba(44, 44, 44, 0.08);
-  --shadow-gold: 0 10px 30px rgba(214, 199, 161, 0.25);
-  --shadow-red: 0 10px 30px rgba(214, 199, 161, 0.25);
+  --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 10px 30px rgba(245, 158, 11, 0.2);
+  --shadow-red: 0 10px 30px rgba(180, 83, 9, 0.25);
 
   /* Fontlar */
   --font-heading: 'Montserrat', sans-serif;
@@ -57,26 +57,58 @@
 }
 
 /* ==========================================================================
-   LIGHT THEME OVERRIDES (Kum & Bej ile Uyumlu)
+   LIGHT THEME OVERRIDES (#FFFFF0 Krem & Fildişi)
    ========================================================================== */
 [data-theme="light"] {
-  --bg-dark: #24282C;
-  --bg-page: #F4F5F6;
+  --bg-dark: #FFFFF0;
+  --bg-hero: #FFFFF0;
+  --bg-page: #FFFFF0;
   --bg-surface: #FFFFFF;
   --card-bg: #FFFFFF;
-  --card-bg-hover: #EAECEE;
+  --card-bg-hover: #F5F5E5;
 
-  --text-primary: #2C2C2C;
-  --text-secondary: #4A525A;
-  --text-muted: #707A84;
-  --border-dark: rgba(44, 44, 44, 0.12);
-  --border-gold: rgba(214, 199, 161, 0.4);
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --border-dark: rgba(0, 0, 0, 0.12);
+  --border-gold: rgba(180, 83, 9, 0.3);
 
-  --shadow-dark: 0 4px 20px rgba(44, 44, 44, 0.06);
+  --shadow-dark: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .header {
+  background: #0B1120 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .nav-link {
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .brand-orman-white {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .contact-hotline-banner {
+  background: #111827 !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+[data-theme="dark"] .hotline-val {
+  color: #F8FAFC !important;
+}
+
+[data-theme="dark"] .hotline-label {
+  color: #F59E0B !important;
 }
 
 [data-theme="light"] .header {
-  background: rgba(249, 248, 246, 0.94);
+  background: #FFFFF0 !important;
   border-bottom: 1px solid rgba(30, 30, 30, 0.1);
 }
 
@@ -152,7 +184,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   min-height: 100%;
   scroll-behavior: smooth;
 }
@@ -179,15 +212,21 @@ body {
   flex: 1;
 }
 
+.home-page-wrapper {
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  width: 100%;
+}
+
 /* ==========================================================================
    TOP BAR & STICKY NAVBAR
    ========================================================================== */
 .top-bar {
-  background-color: var(--bg-dark);
-  color: #EAECEE;
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
   font-size: 0.825rem;
   padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-dark);
 }
 
 .top-bar-inner {
@@ -212,7 +251,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: #EAECEE;
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.825rem;
   transition: color 0.2s ease;
@@ -223,12 +262,12 @@ body {
 }
 
 .top-item.highlight-contact {
-  color: #FFFFFF;
+  color: var(--text-primary);
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--card-bg);
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border-dark);
 }
 
 .top-item.highlight-whatsapp {
@@ -258,18 +297,25 @@ body {
 }
 
 /* NAVBAR */
+.header-wrapper {
+  background-color: var(--bg-dark);
+  background: var(--bg-dark);
+}
+
 .header {
-  background: rgba(36, 40, 44, 0.95);
+  background-color: var(--bg-dark);
+  background: var(--bg-dark);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-dark);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-dark);
 }
 
 .header-container {
+
   max-width: 1320px;
   margin: 0 auto;
   padding: 1.1rem 1.5rem;
@@ -292,12 +338,13 @@ body {
 }
 
 .brand-tree-img {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 3px;
   transition: transform 0.25s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
   background-color: #FFFFFF;
 }
 
@@ -325,7 +372,7 @@ body {
 .brand-orman-white {
   display: flex;
   flex-direction: column;
-  color: #FFFFFF;
+  color: #2C2C2C;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 0.85rem;
@@ -354,7 +401,7 @@ body {
   font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 900;
-  color: #FFFFFF;
+  color: #2C2C2C;
   letter-spacing: -0.5px;
   line-height: 1.1;
 }
@@ -374,18 +421,18 @@ body {
 }
 
 .nav-link {
-  color: var(--text-secondary);
+  color: #4A525A;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
   padding: 0.4rem 0.2rem;
   position: relative;
   transition: color 0.2s ease;
 }
 
-.nav-link:hover, 
+.nav-link:hover,
 .nav-link.active {
-  color: #FFFFFF;
+  color: #2C2C2C;
 }
 
 .nav-link.active::after {
@@ -423,7 +470,7 @@ body {
   display: none;
   background: none;
   border: none;
-  color: #FFFFFF;
+  color: #2C2C2C;
   cursor: pointer;
   padding: 0.5rem;
 }
@@ -484,9 +531,9 @@ body {
 .hero-slider-container {
   position: relative;
   width: 100%;
-  height: 82vh;
-  min-height: 560px;
-  max-height: 780px;
+  height: 85vh;
+  min-height: 580px;
+  max-height: 850px;
   overflow: hidden;
   background-color: var(--bg-dark);
 }
@@ -498,7 +545,7 @@ body {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -517,8 +564,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.05);
-  transition: transform 7s ease;
+  object-position: center center;
+  filter: brightness(1.05) contrast(1.08);
+  transform: scale(1.03);
+  transition: transform 6s ease;
 }
 
 .slide-item.active .slide-bg-image {
@@ -533,9 +582,9 @@ body {
   height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(36, 40, 44, 0.96) 0%,
-    rgba(36, 40, 44, 0.78) 55%,
-    rgba(36, 40, 44, 0.45) 100%
+    rgba(7, 11, 20, 0.82) 0%,
+    rgba(7, 11, 20, 0.48) 45%,
+    rgba(7, 11, 20, 0.15) 100%
   );
 }
 
@@ -564,9 +613,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(217, 119, 6, 0.2);
-  border: 1px solid var(--accent-gold);
-  color: var(--accent-gold);
+  background: rgba(214, 199, 161, 0.15) !important;
+  border: 1px solid #D6C7A1 !important;
+  color: #D6C7A1 !important;
   padding: 0.45rem 1.25rem;
   border-radius: 9999px;
   font-size: 0.825rem;
@@ -588,9 +637,56 @@ body {
 
 .slide-subtitle {
   font-size: 1.15rem;
-  color: var(--text-secondary);
+  color: #CBD5E1;
   line-height: 1.65;
   margin-bottom: 2.25rem;
+}
+
+.btn-primary {
+  background: #2D4B5A !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  padding: 0.85rem 1.6rem !important;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 800 !important;
+  font-size: 0.95rem !important;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #1E3340 !important;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #D6C7A1 !important;
+  color: #2C2C2C !important;
+  border: 1px solid #C5B48E !important;
+  padding: 0.85rem 1.6rem !important;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 800 !important;
+  font-size: 0.95rem !important;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(214, 199, 161, 0.25);
+}
+
+.btn-secondary:hover {
+  background: #E0D2B4 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(214, 199, 161, 0.4);
 }
 
 .slider-arrows {
@@ -702,7 +798,7 @@ body {
 .section-title-large {
   font-family: var(--font-heading);
   font-size: 2.25rem;
-  color: #FFFFFF;
+  color: #2C2C2C;
   margin-top: 0.4rem;
   font-weight: 900;
 }
@@ -802,12 +898,10 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.05) 0%,
-    rgba(0, 0, 0, 0.2) 60%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.2) 60%,
+      rgba(0, 0, 0, 0.7) 100%);
   pointer-events: none;
 }
 
@@ -888,7 +982,7 @@ body {
   font-family: var(--font-heading);
   font-size: 1.75rem;
   font-weight: 900;
-  color: #FFFFFF;
+  color: #2C2C2C;
   margin-bottom: 0.2rem;
 }
 
@@ -983,7 +1077,7 @@ body {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 900;
-  color: #FFFFFF;
+  color: #2C2C2C;
   margin: 0;
 }
 
@@ -1112,7 +1206,7 @@ body {
   font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: 900;
-  color: #FFFFFF;
+  color: #2C2C2C;
 }
 
 .catalog-count {
@@ -1277,7 +1371,7 @@ body {
 }
 
 .btn-whatsapp {
-  background: #25D366;
+  background: #16A34A;
   color: #FFFFFF;
   border: none;
   padding: 0.7rem 1rem;
@@ -1293,7 +1387,7 @@ body {
 }
 
 .btn-whatsapp:hover {
-  background: #128C7E;
+  background: #15803D;
 }
 
 /* ==========================================================================
@@ -1674,7 +1768,7 @@ body {
   font-family: var(--font-heading);
   font-size: 2.25rem;
   font-weight: 900;
-  color: #FFFFFF;
+  color: #2C2C2C;
   margin-top: 0.4rem;
   margin-bottom: 1rem;
 }
@@ -1713,45 +1807,48 @@ body {
 }
 
 .contact-icon-box.phone-icon {
-  background: linear-gradient(135deg, #E52E2E 0%, #B91C1C 100%);
-  box-shadow: 0 6px 16px rgba(229, 46, 46, 0.4);
+  background: #0f172a !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25) !important;
 }
 
 .contact-icon-box.whatsapp-icon {
-  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
-  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+  background: #25D366 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35) !important;
 }
 
 .contact-btn-text {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
 
 .home-contact-btn.phone-style {
-  background: rgba(229, 46, 46, 0.08);
-  border: 1.5px solid rgba(229, 46, 46, 0.4);
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
 }
 
 .home-contact-btn.whatsapp-style {
-  background: rgba(34, 197, 94, 0.08);
-  border: 1.5px solid rgba(34, 197, 94, 0.4);
+  background: #ffffff !important;
+  border: 1.5px solid #25D366 !important;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.12) !important;
 }
 
 .home-contact-btn small {
   display: block;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
 
 .home-contact-btn.phone-style small {
-  color: #E52E2E;
+  color: #1e293b !important;
 }
 
 .home-contact-btn.whatsapp-style small {
-  color: #22C55E;
+  color: #16A34A !important;
 }
 
 .home-contact-btn strong {
@@ -1762,42 +1859,41 @@ body {
   line-height: 1.2;
 }
 
-/* Dark Theme Colors */
 .home-contact-btn.phone-style strong {
-  color: #FFFFFF;
+  color: #0f172a !important;
 }
 
 .home-contact-btn.whatsapp-style strong {
-  color: #FFFFFF;
+  color: #0F172A !important;
 }
 
 /* Light Theme Overrides */
 [data-theme="light"] .home-contact-btn.phone-style {
-  background: #FFFFFF;
-  border: 1.5px solid rgba(229, 46, 46, 0.5);
-  box-shadow: 0 6px 20px rgba(229, 46, 46, 0.1);
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
 }
 
 [data-theme="light"] .home-contact-btn.phone-style small {
-  color: #C52222;
+  color: #1e293b !important;
 }
 
 [data-theme="light"] .home-contact-btn.phone-style strong {
-  color: #0F172A;
+  color: #0f172a !important;
 }
 
 [data-theme="light"] .home-contact-btn.whatsapp-style {
-  background: #FFFFFF;
-  border: 1.5px solid rgba(34, 197, 94, 0.5);
-  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.1);
+  background: #FFFFFF !important;
+  border: 1.5px solid #25D366 !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.12);
 }
 
 [data-theme="light"] .home-contact-btn.whatsapp-style small {
-  color: #15803D;
+  color: #16A34A !important;
 }
 
 [data-theme="light"] .home-contact-btn.whatsapp-style strong {
-  color: #0F172A;
+  color: #0F172A !important;
 }
 
 .home-map-col {
@@ -1963,10 +2059,10 @@ body {
    CORPORATE FOOTER
    ========================================================================== */
 .site-footer {
-  background-color: #070C18;
-  color: var(--text-secondary);
+  background-color: #181816 !important;
+  color: #D1CBC4;
   padding: 4.5rem 1.5rem 2rem 1.5rem;
-  border-top: 3px solid var(--accent-brass);
+  border-top: 3px solid #f59e0b;
 }
 
 .footer-inner {
@@ -1987,7 +2083,7 @@ body {
 
 .footer-brand-title h3 {
   font-family: var(--font-heading);
-  color: #FFFFFF;
+  color: #ffffff !important;
   font-size: 1.35rem;
   font-weight: 900;
 }
@@ -1995,27 +2091,41 @@ body {
 .footer-brand p {
   font-size: 0.9rem;
   line-height: 1.7;
-  color: var(--text-secondary);
+  color: #D1CBC4;
 }
 
+/* Footer Sütun Başlıkları */
+.footer-title,
 .footer-col h4 {
   font-family: var(--font-heading);
-  color: #FFFFFF;
+  color: #ffffff !important;
+  /* ya da altın sarısı için: #fbbf24 */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   font-size: 1.1rem;
-  font-weight: 800;
   margin-bottom: 1.35rem;
   position: relative;
   padding-bottom: 0.5rem;
 }
 
+/* Başlıkların altındaki dekoratif çizgi */
+.footer-title-divider,
 .footer-col h4::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 40px;
+  background-color: #f59e0b !important;
+  /* sıcak ahşap/amber rengi */
   height: 2px;
-  background: var(--accent-gold);
+  width: 48px;
+}
+
+/* Logo yanındaki 'ORMAN ÜRÜNLERİ' metni */
+.logo-subtitle,
+.site-footer .brand-orman-white {
+  color: #ffffff !important;
 }
 
 .footer-links {
@@ -2026,7 +2136,7 @@ body {
 }
 
 .footer-links a {
-  color: var(--text-secondary);
+  color: #D1CBC4;
   text-decoration: none;
   font-size: 0.9rem;
   transition: all 0.25s ease;
@@ -2036,7 +2146,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: var(--accent-gold);
+  color: #f59e0b;
   transform: translateX(4px);
 }
 
@@ -2070,7 +2180,7 @@ body {
 /* PAGE HEADER UTILITY */
 .page-header {
   background: linear-gradient(rgba(11, 17, 32, 0.92), rgba(11, 17, 32, 0.95)),
-              url('/lambri-kaplama.png');
+    url('/lambri-kaplama.png');
   background-size: cover;
   background-position: center;
   color: #FFFFFF;
@@ -2098,20 +2208,25 @@ body {
   .slide-title {
     font-size: 2.2rem;
   }
+
   .slide-subtitle {
     font-size: 1rem;
   }
+
   .slider-arrows {
     right: 1.5rem;
     bottom: 1.5rem;
   }
+
   .slider-dots {
     left: 1.5rem;
     bottom: 1.5rem;
   }
+
   .main-nav {
     display: none;
   }
+
   .main-nav.open {
     display: flex;
     flex-direction: column;
@@ -2126,12 +2241,15 @@ body {
     gap: 1.2rem;
     align-items: flex-start;
   }
+
   .main-nav.open .nav-link {
     width: 100%;
   }
+
   .mobile-toggle {
     display: block;
   }
+
   .hide-mobile {
     display: none !important;
   }
@@ -2171,12 +2289,10 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle at center,
-    rgba(11, 17, 32, 0.4) 0%,
-    rgba(11, 17, 32, 0.85) 70%,
-    var(--bg-dark) 100%
-  );
+  background: radial-gradient(circle at center,
+      rgba(11, 17, 32, 0.4) 0%,
+      rgba(11, 17, 32, 0.85) 70%,
+      var(--bg-dark) 100%);
 }
 
 .cat-hero-content {
@@ -2420,18 +2536,18 @@ body {
 }
 
 /* ==========================================================================
-   CONTACT HOTLINE BANNER
+   CONTACT HOTLINE BANNER & CARD THEMING
    ========================================================================== */
 .contact-hotline-banner {
-  background: #0F172A;
-  border: 1px solid var(--border-gold);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-gold);
   border-radius: var(--radius-lg);
   padding: 1.75rem 2.5rem;
   margin-bottom: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-dark);
   flex-wrap: wrap;
   gap: 1.5rem;
 }
@@ -2455,17 +2571,78 @@ body {
   font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 900;
-  color: #FFFFFF !important;
+  color: var(--text-primary);
   text-decoration: none;
   transition: color 0.25s ease;
 }
 
+.hotline-val:hover {
+  color: var(--accent-gold);
+}
+
 .hotline-val.green {
-  color: #22C55E !important;
+  color: #22C55E;
 }
 
 .hotline-divider {
   width: 1px;
   height: 48px;
-  background: rgba(234, 179, 8, 0.3);
+  background: var(--border-dark);
+}
+
+/* ==========================================================================
+   KURUMSAL & VİZYON KART RENK TANIMLAMALARI
+   ========================================================================== */
+.card-title {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.badge-title {
+  color: var(--accent-gold);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.card-icon {
+  color: var(--accent-gold);
+}
+
+.section-divider {
+  background: linear-gradient(90deg, transparent, var(--border-dark), transparent);
+  height: 1px;
+}
+
+.section-badge {
+  color: var(--accent-gold);
+}
+
+.address-card {
+  border: 1px solid var(--border-gold);
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-dark);
+  transition: all 0.3s ease;
+}
+.address-card:hover {
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-gold);
+}
+.address-card .icon-box {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: var(--accent-gold);
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.address-card .card-subtitle {
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+.address-card .card-text {
+  color: var(--text-primary);
 }

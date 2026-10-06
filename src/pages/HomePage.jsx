@@ -2,7 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
 import HeroSlider from '../components/HeroSlider';
-import { MessageCircle, Phone, MapPin } from 'lucide-react';
+import { Phone, MapPin, ShieldCheck, Truck, Award, Sparkles, Layers, ArrowRight } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ export default function HomePage() {
     categories,
     filteredProducts,
     selectedCategory,
+    setSelectedCategory,
   } = useProducts();
 
   const phoneNumber = "+905336415837";
@@ -21,37 +23,63 @@ export default function HomePage() {
   };
 
   return (
-    <div>
+    <div className="home-page-wrapper">
       {/* Luxury Hero Slider */}
       <HeroSlider onSelectCategory={(catId) => navigate(`/kategori/${catId}`)} />
 
       {/* =========================================================================
-         FİLTRELEME VE KATEGORİ TABLARI
+         NEDEN YAPAR ORMAN? (LÜKS SİMGE VE ÖZELLİKLER BÖLÜMÜ)
          ========================================================================= */}
-      <section id="katalog" className="filter-section">
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <span className="section-subtitle-gold">
-            YAPAR ORMAN ÜRÜN GRUPLARI
-          </span>
-          <h2 className="section-title-large">
-            Ürün Koleksiyonumuz
-          </h2>
-          <p style={{ color: 'var(--text-secondary)', maxWidth: '780px', margin: '0.8rem auto 0 auto', fontSize: '1.05rem', lineHeight: '1.7', fontStyle: 'italic' }}>
-            "Mekânlarınıza modern bir dokunuş yaparken dayanıklılıktan da ödün vermeyin. Kaliteli malzemelerden üretilen ve uzun ömürlü kullanım sunan panellerimiz, mekânlarınızın atmosferini anında değiştirir."
-          </p>
+      <section style={{ maxWidth: '1320px', margin: '3.5rem auto 2rem auto', padding: '0 1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ background: 'var(--bg-surface)', padding: '1.75rem', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--border-gold)', boxShadow: 'var(--shadow-dark)', display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+            <div style={{ background: 'rgba(180, 83, 9, 0.12)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
+              <Award size={32} color="#b45309" />
+            </div>
+            <div>
+              <strong style={{ display: 'block', fontSize: '1.1rem', fontWeight: '900', color: 'var(--text-primary)' }}>%100 Masif & E1 Standart</strong>
+              <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Uluslararası Kalite Belgesi</span>
+            </div>
+          </div>
+
+          <div style={{ background: 'var(--bg-surface)', padding: '1.75rem', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--border-gold)', boxShadow: 'var(--shadow-dark)', display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+            <div style={{ background: 'rgba(180, 83, 9, 0.12)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
+              <Layers size={32} color="#b45309" />
+            </div>
+            <div>
+              <strong style={{ display: 'block', fontSize: '1.1rem', fontWeight: '900', color: 'var(--text-primary)' }}>Yoğun Akustik Keçe</strong>
+              <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Yüksek Ses Yalıtım Değeri</span>
+            </div>
+          </div>
+
+          <div style={{ background: 'var(--bg-surface)', padding: '1.75rem', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--border-gold)', boxShadow: 'var(--shadow-dark)', display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+            <div style={{ background: 'rgba(180, 83, 9, 0.12)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
+              <Truck size={32} color="#b45309" />
+            </div>
+            <div>
+              <strong style={{ display: 'block', fontSize: '1.1rem', fontWeight: '900', color: 'var(--text-primary)' }}>Stoktan Hızlı Sevkiyat</strong>
+              <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Kayseri Depo Teslimat</span>
+            </div>
+          </div>
+
+          <div style={{ background: 'var(--bg-surface)', padding: '1.75rem', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--border-gold)', boxShadow: 'var(--shadow-dark)', display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+            <div style={{ background: 'rgba(180, 83, 9, 0.12)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
+              <Sparkles size={32} color="#b45309" />
+            </div>
+            <div>
+              <strong style={{ display: 'block', fontSize: '1.1rem', fontWeight: '900', color: 'var(--text-primary)' }}>50+ Renk & Kaplama</strong>
+              <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Geniş Ürün Kartelası</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* =========================================================================
-         DİKİNE LÜKS GALERİ KARTLARI GRID'İ (TIRKLANINCA KATEGORİ LANSMAN SAYFASI AÇILIR)
-         ========================================================================= */}
-      <main className="catalog-container">
-        <div className="catalog-header">
-          <h2 className="catalog-title">
-            {selectedCategory === 'all' ? 'Tüm Ürün Grupları' : `${categories.find((c) => c.id === selectedCategory)?.name} Kategorisi`}
-          </h2>
-        </div>
 
+
+      {/* =========================================================================
+         DİKİNE LÜKS GALERİ KARTLARI GRID'İ
+         ========================================================================= */}
+      <main className="catalog-container" style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 1.5rem' }}>
         <div className="gallery-cards-grid">
           {filteredProducts.map((product) => (
             <div
@@ -63,8 +91,9 @@ export default function HomePage() {
               <div className="portrait-card-overlay"></div>
 
               {/* Sağ Alt Koyu Transparan Etiket Kutusu */}
-              <div className="portrait-card-tag-box">
+              <div className="portrait-card-tag-box" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span>{product.title}</span>
+                <ArrowRight size={18} color="#F59E0B" />
               </div>
             </div>
           ))}
@@ -74,23 +103,25 @@ export default function HomePage() {
       {/* =========================================================================
          MİSYON VE VİZYON KISMI
          ========================================================================= */}
-      <section style={{ maxWidth: '1320px', margin: '3rem auto 4rem auto', padding: '0 1.5rem' }}>
+      <section style={{ maxWidth: '1320px', margin: '4rem auto', padding: '0 1.5rem' }}>
         <div className="mission-vision-home-container">
-          <div className="mv-card">
-            <div className="mv-icon-title">
-              <h3>MİSYONUMUZ</h3>
+          <div className="mv-card" style={{ background: 'var(--bg-surface)', border: '1.5px solid var(--border-gold)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', boxShadow: 'var(--shadow-dark)' }}>
+            <div className="mv-icon-title" style={{ marginBottom: '1rem' }}>
+              <span style={{ color: '#b45309', fontSize: '0.8rem', fontWeight: '800', letterSpacing: '1px', display: 'block', marginBottom: '0.2rem' }}>KURUMSAL DEĞERLER</span>
+              <h3 className="card-title" style={{ fontSize: '1.8rem', fontWeight: '900', color: 'var(--text-primary)' }}>MİSYONUMUZ</h3>
             </div>
-            <p>
-              Yapar Orman Ürünleri olarak misyonumuz; ahşap ve yapı malzemeleri sektöründe yüksek kalite standartlarına sahip Membran, Akustik, Sunta, MDF, Lambri, Arkalık ve Panel ürünlerini en doğru fiyatlandırma, dürüst ticaret anlayışı ve kesintisiz stok desteği ile müşterilerimize sunmaktır.
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.025rem' }}>
+              Yapar Orman Ürünleri olarak misyonumuz; ahşap ve yapı malzemeleri sektöründe yüksek kalite standartlarına sahip Membran, Akustik, Sunta, MDF, Lambri ve Panel ürünlerini en doğru fiyatlandırma, dürüst ticaret anlayışı ve kesintisiz stok desteği ile müşterilerimize sunmaktır.
             </p>
           </div>
 
-          <div className="mv-card">
-            <div className="mv-icon-title">
-              <h3>VİZYONUMUZ</h3>
+          <div className="mv-card" style={{ background: 'var(--bg-surface)', border: '1.5px solid var(--border-gold)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', boxShadow: 'var(--shadow-dark)' }}>
+            <div className="mv-icon-title" style={{ marginBottom: '1rem' }}>
+              <span style={{ color: '#b45309', fontSize: '0.8rem', fontWeight: '800', letterSpacing: '1px', display: 'block', marginBottom: '0.2rem' }}>GELECEK HEDEFİ</span>
+              <h3 className="card-title" style={{ fontSize: '1.8rem', fontWeight: '900', color: 'var(--text-primary)' }}>VİZYONUMUZ</h3>
             </div>
-            <p>
-              Vizyonumuz; bölgesel liderliğimizi ulusal düzeye taşıyarak iç mimari ahşap yüzeyler, akustik duvar panelleri ve membran grubunda yenilikçi tasarımların ve güvenilir tedariğin ilk adresi olmaktır.
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.025rem' }}>
+              Vizyonumuz; Kayseri ve İç Anadolu Bölgesi'ndeki köklü liderliğimizi ulusal ve uluslararası platformlara taşıyarak iç mimari ahşap yüzeyler, akustik duvar panelleri ve membran grubunda yenilikçi tasarımların ve güvenilir tedariğin ilk adresi olmaktır.
             </p>
           </div>
         </div>
@@ -99,12 +130,12 @@ export default function HomePage() {
       {/* =========================================================================
          İLETİŞİM HATTI VE HARİTADA KONUM BÖLÜMÜ
          ========================================================================= */}
-      <section className="home-contact-map-section">
+      <section className="home-contact-map-section" style={{ maxWidth: '1320px', margin: '0 auto 4rem auto', padding: '0 1.5rem' }}>
         <div className="home-contact-map-inner">
           <div className="home-contact-info-col">
-            <span className="section-subtitle-gold">KESİNTİSİZ İLETİŞİM HATLARI</span>
-            <h2>Bizimle İletişime Geçin</h2>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', lineHeight: '1.7' }}>
+            <span className="section-badge section-subtitle-gold" style={{ display: 'block', color: '#b45309', fontWeight: '800', letterSpacing: '1px', marginBottom: '0.4rem' }}>KESİNTİSİZ İLETİŞİM HATLARI</span>
+            <h2 style={{ fontSize: '2.2rem', fontWeight: '900', color: 'var(--text-primary)', marginBottom: '1rem' }}>Bizimle İletişime Geçin</h2>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', lineHeight: '1.7', fontSize: '1rem' }}>
               Metraj bazlı fiyat teklifleri, numune gönderimi ve lojistik detaylar için bize telefon ya da WhatsApp hattımızdan anında ulaşın.
             </p>
 
@@ -126,7 +157,7 @@ export default function HomePage() {
                 className="home-contact-btn whatsapp-style"
               >
                 <div className="contact-icon-box whatsapp-icon">
-                  <MessageCircle size={24} />
+                  <WhatsAppIcon size={26} color="#ffffff" />
                 </div>
                 <div className="contact-btn-text">
                   <small>WhatsApp İletişim Hattı</small>
@@ -135,14 +166,16 @@ export default function HomePage() {
               </a>
             </div>
 
-            <div style={{ marginTop: '2rem', background: 'rgba(255,255,255,0.03)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-dark)' }}>
-              <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                <MapPin color="var(--accent-gold)" size={24} style={{ flexShrink: 0, marginTop: '2px' }} />
+            <div className="address-card" style={{ marginTop: '2rem', padding: '1.25rem', borderRadius: 'var(--radius-md)' }}>
+              <div style={{ display: 'flex', gap: '0.85rem', alignItems: 'flex-start' }}>
+                <div className="icon-box">
+                  <MapPin size={24} color="#b45309" />
+                </div>
                 <div>
-                  <strong style={{ color: '#FFFFFF', display: 'block', fontSize: '1rem', marginBottom: '0.2rem' }}>
+                  <strong className="card-subtitle" style={{ display: 'block', fontSize: '1rem', marginBottom: '0.2rem' }}>
                     Fabrika & Ana Depo Adresi:
                   </strong>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.925rem' }}>
+                  <span className="card-text" style={{ fontSize: '0.925rem' }}>
                     Camikebir Mah. 5062. Cd. 1. Blok No: 3, Kocasinan / Kayseri
                   </span>
                 </div>
@@ -163,7 +196,7 @@ export default function HomePage() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
-              <div className="map-overlay-badge" style={{ border: '1.5px solid var(--brand-red)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div className="map-overlay-badge" style={{ border: '1.5px solid #b45309', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <MapPin size={22} color="#DC2626" fill="#DC2626" />
                 <span style={{ fontWeight: '800', color: '#FFFFFF' }}>Camikebir Mah. 5062. Cd. No: 3, Kocasinan / Kayseri</span>
               </div>

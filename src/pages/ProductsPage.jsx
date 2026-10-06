@@ -47,12 +47,11 @@ export default function ProductsPage() {
 
                 <div className="card-footer-actions" style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                   <button
-                    className="btn-detail"
+                    className="card-action-btn"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleProductClick(product.category);
                     }}
-                    style={{ width: '100%' }}
                   >
                     Kategori Lansman Vitrinini İncele
                   </button>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Download, Phone, Mail, MapPin, Clock, ChevronRight, ShieldCheck, MessageCircle } from 'lucide-react';
+import { Download, Phone, Mail, MapPin, Clock, ChevronRight, ShieldCheck } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Footer() {
   const phoneNumber = "+905336415837";
@@ -16,7 +17,7 @@ export default function Footer() {
               <img src="/tree-emblem.png" alt="Yapar Orman Ürünleri" className="brand-tree-img" />
               <div className="brand-text-custom">
                 <span className="brand-yapar-red">YAPAR</span>
-                <div className="brand-orman-white">
+                <div className="brand-orman-white logo-subtitle">
                   <span>ORMAN</span>
                   <span>ÜRÜNLERİ</span>
                 </div>
@@ -47,30 +48,30 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="footer-col">
-          <h4>HIZLI MENÜ</h4>
+          <h4 className="footer-title">HIZLI MENÜ</h4>
           <ul className="footer-links">
-            <li><Link to="/"><ChevronRight size={14} color="var(--accent-gold)" /> Anasayfa</Link></li>
-            <li><Link to="/kurumsal"><ChevronRight size={14} color="var(--accent-gold)" /> Kurumsal & Misyon Vizyon</Link></li>
-            <li><Link to="/urunler"><ChevronRight size={14} color="var(--accent-gold)" /> Ürün Koleksiyonumuz</Link></li>
-            <li><Link to="/renkler"><ChevronRight size={14} color="var(--accent-gold)" /> Renkler & Renk Kodları</Link></li>
-            <li><Link to="/iletisim"><ChevronRight size={14} color="var(--accent-gold)" /> İletişim & Harita Konumu</Link></li>
+            <li><Link to="/"><ChevronRight size={14} color="#f59e0b" /> Anasayfa</Link></li>
+            <li><Link to="/kurumsal"><ChevronRight size={14} color="#f59e0b" /> Kurumsal & Misyon Vizyon</Link></li>
+            <li><Link to="/urunler"><ChevronRight size={14} color="#f59e0b" /> Ürün Koleksiyonumuz</Link></li>
+            <li><Link to="/renkler"><ChevronRight size={14} color="#f59e0b" /> Renkler & Renk Kodları</Link></li>
+            <li><Link to="/iletisim"><ChevronRight size={14} color="#f59e0b" /> İletişim & Harita Konumu</Link></li>
           </ul>
         </div>
 
         {/* Categories */}
         <div className="footer-col">
-          <h4>ÜRÜN GRUPLARIMIZ</h4>
+          <h4 className="footer-title">ÜRÜN GRUPLARIMIZ</h4>
           <ul className="footer-links">
-            <li><Link to="/urunler?category=lambri"><ChevronRight size={14} color="var(--accent-gold)" /> Duvar Lambirileri</Link></li>
-            <li><Link to="/urunler?category=akustik"><ChevronRight size={14} color="var(--accent-gold)" /> Keçeli Akustik Paneller</Link></li>
-            <li><Link to="/urunler?category=mdf"><ChevronRight size={14} color="var(--accent-gold)" /> MDF</Link></li>
-            <li><Link to="/urunler?category=membran"><ChevronRight size={14} color="var(--accent-gold)" /> Membran Kapaklar </Link></li>
+            <li><Link to="/urunler?category=lambri"><ChevronRight size={14} color="#f59e0b" /> Duvar Lambirileri</Link></li>
+            <li><Link to="/urunler?category=akustik"><ChevronRight size={14} color="#f59e0b" /> Keçeli Akustik Paneller</Link></li>
+            <li><Link to="/urunler?category=mdf"><ChevronRight size={14} color="#f59e0b" /> MDF</Link></li>
+            <li><Link to="/urunler?category=membran"><ChevronRight size={14} color="#f59e0b" /> Membran Kapaklar </Link></li>
           </ul>
         </div>
 
         {/* Contact & Location */}
         <div className="footer-col">
-          <h4>İLETİŞİM HATLARI</h4>
+          <h4 className="footer-title">İLETİŞİM HATLARI</h4>
           <div className="footer-contact-list">
             <div className="footer-contact-item">
               <MapPin size={16} color="var(--accent-gold)" />
@@ -83,7 +84,7 @@ export default function Footer() {
               </a>
             </div>
             <div className="footer-contact-item">
-              <MessageCircle size={16} color="#22C55E" />
+              <WhatsAppIcon size={16} color="#22C55E" />
               <a
                 href={`https://wa.me/${whatsappNumber}`}
                 target="_blank"

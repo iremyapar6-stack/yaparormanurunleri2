@@ -2,7 +2,8 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { MessageCircle, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 
 export default function AppLayout() {
   const phoneNumber = "+905336415837";
@@ -34,8 +35,8 @@ export default function AppLayout() {
           className="floating-btn float-whatsapp"
           title="WhatsApp İletişim Hattı"
         >
-          <MessageCircle size={24} />
-          <span className="float-tooltip">WhatsApp Teklif Al</span>
+          <WhatsAppIcon size={26} color="#ffffff" />
+          <span className="float-tooltip">WhatsApp</span>
         </a>
       </div>
     </div>

@@ -195,9 +195,9 @@ export const products = [
     images: [
       "/lambri-kaplama.png"
     ],
-    shortDescription: "Fırınlanmış yerli çam ve İskandinav ladin ağacından imal edilen masif tavan ve duvar lambirisi.",
-    fullDescription: "Nem oranı %10-12 seviyesine düşürülmüş fırınlı çam lambirilerimiz, çatlama ve dönme yapmadan uzun ömürlü kullanım sunar.",
-    whatIsIt: "Fırınlama işleminden geçmiş doğal çam ağacının zımparalanıp geçmeli profil olarak işlenmesiyle elde edilen %100 masif ahşap kaplama malzemesidir.",
+    shortDescription: "Yerli çam ve İskandinav ladin ağacından imal edilen masif tavan ve duvar lambirisi.",
+    fullDescription: "Nem oranı dengelenmiş çam lambirilerimiz, çatlama ve dönme yapmadan uzun ömürlü kullanım sunar.",
+    whatIsIt: "Doğal çam ağacının zımparalanıp geçmeli profil olarak işlenmesiyle elde edilen %100 masif ahşap kaplama malzemesidir.",
     usageAreas: [
       "İç mekan duvar kaplamaları",
       "Tavan ve sundurma altı kaplamaları",
@@ -207,11 +207,11 @@ export const products = [
     quickSpecs: {
       boy: "3000 mm",
       en: "95 mm",
-      renk: "Doğal Fırınlı Çam",
+      renk: "Doğal Çam",
       renkKodu: "YPR-LMB101",
       kalinlik: "15 mm",
       yuzey: "Masif Ahşap Pürüzsüz Yüzey",
-      govde: "Fırınlı Çam Kereste"
+      govde: "Çam Kereste"
     },
     specs: {
       "Boy (Uzunluk)": "3000 mm",
